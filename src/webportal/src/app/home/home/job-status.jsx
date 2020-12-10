@@ -60,7 +60,7 @@ const StatusRow = ({ cellClassName, icon, name, count, link }) => {
       <td style={{ textAlign: 'right' }} className={cellClassName}>
         <DefaultButton
           styles={{ root: [{ width: 100 }] }}
-          text='View all'
+          text='查看'
           href={link}
         />
       </td>
@@ -90,7 +90,7 @@ const JobStatus = ({ className, style, jobStatusNumber }) => {
     <Card className={c(className, t.ph5)} style={style}>
       <Stack gap='l1'>
         <div className={FontClassNames.mediumPlus}>
-          {isAdmin ? 'Job Status' : 'My job status'}
+          {isAdmin ? '任务状态' : '我的任务状态'}
         </div>
         <table style={{ width: '100%', borderCollapse: 'collapse' }}>
           <tbody>

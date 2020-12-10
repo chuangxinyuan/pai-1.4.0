@@ -43,7 +43,7 @@ const JobEventList = props => {
   const columns = [
     {
       key: 'taskRoleName',
-      name: 'Task Role Name',
+      name: 'Task Role名称',
       headerClassName: FontClassNames.medium,
       isResizable: true,
       onRender: (item, idx) => {
@@ -54,7 +54,7 @@ const JobEventList = props => {
     },
     {
       key: 'taskIndex',
-      name: 'Task Index',
+      name: 'Task索引',
       maxWidth: 60,
       headerClassName: FontClassNames.medium,
       isResizable: true,
@@ -66,7 +66,7 @@ const JobEventList = props => {
     },
     {
       key: 'type',
-      name: 'Type',
+      name: '类型',
       headerClassName: FontClassNames.medium,
       isResizable: true,
       onRender: (item, idx) => {
@@ -75,7 +75,7 @@ const JobEventList = props => {
     },
     {
       key: 'reason',
-      name: 'Reason',
+      name: '原因',
       minWidth: 150,
       headerClassName: FontClassNames.medium,
       isResizable: true,
@@ -85,7 +85,7 @@ const JobEventList = props => {
     },
     {
       key: 'message',
-      name: 'message',
+      name: '消息',
       headerClassName: FontClassNames.medium,
       minWidth: 550,
       maxWidth: 1000,
@@ -103,7 +103,7 @@ const JobEventList = props => {
                 rootDisabled: { backgroundColor: 'transparent' },
               }}
               iconProps={{ iconName: 'TextDocument' }}
-              text='Full Message'
+              text='完整消息'
               onClick={() => {
                 toggleHideDialog();
                 setDialogMessage(item.message);
@@ -115,7 +115,7 @@ const JobEventList = props => {
     },
     {
       key: 'firstTimestamp',
-      name: 'First Timestamp',
+      name: '第一个时间戳',
       minWidth: 160,
       headerClassName: FontClassNames.medium,
       isResizable: true,
@@ -131,7 +131,7 @@ const JobEventList = props => {
     },
     {
       key: 'lastTimestamp',
-      name: 'Last Timestamp',
+      name: '最新时间戳',
       headerClassName: FontClassNames.medium,
       minWidth: 160,
       isResizable: true,
@@ -147,7 +147,7 @@ const JobEventList = props => {
     },
     {
       key: 'count',
-      name: 'Count',
+      name: '次数',
       maxWidth: 50,
       headerClassName: FontClassNames.medium,
       isResizable: true,
@@ -168,11 +168,11 @@ const JobEventList = props => {
       />
       <Dialog hidden={hideDialog} onDismiss={toggleHideDialog} minWidth='500px'>
         <Stack gap='m'>
-          <Text variant='xLarge'>Event Message :</Text>
+          <Text variant='xLarge'>事件消息 :</Text>
           <Text variant='large'>{dialogMessage}</Text>
         </Stack>
         <DialogFooter>
-          <PrimaryButton onClick={toggleHideDialog} text='Close' />
+          <PrimaryButton onClick={toggleHideDialog} text='关闭' />
         </DialogFooter>
       </Dialog>
     </Stack>

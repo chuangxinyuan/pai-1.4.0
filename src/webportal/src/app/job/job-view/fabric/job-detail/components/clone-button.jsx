@@ -60,7 +60,7 @@ const CloneButton = ({ rawJobConfig, namespace, jobName, enableTransfer }) => {
           undefined,
           () => {
             alert(
-              `The job was submitted by ${pluginId}, but it is not installed. Will use default submission page instead`,
+              `任务由 ${pluginId}提交, 但尚未安装. 将改为使用默认提交页`,
             );
             window.location.href = `/submit.html?${qs.stringify(queryNew)}`;
           },
@@ -71,7 +71,7 @@ const CloneButton = ({ rawJobConfig, namespace, jobName, enableTransfer }) => {
           undefined,
           () => {
             alert(
-              `Clone job failed. The job was submitted by ${pluginId}, but it is not installed.`,
+              `复制任务失败. 任务由 ${pluginId}提交, 但尚未安装.`,
             );
           },
         ];
@@ -87,6 +87,7 @@ const CloneButton = ({ rawJobConfig, namespace, jobName, enableTransfer }) => {
     ];
   }, [rawJobConfig]);
 
+
   let cloneButton;
   // Only when transfer job is enabled, and the owner of this job is the one
   // who is viewing it, show the transfer option.
@@ -94,13 +95,13 @@ const CloneButton = ({ rawJobConfig, namespace, jobName, enableTransfer }) => {
   if (enableTransfer && isViewingSelf) {
     cloneButton = (
       <PrimaryButton
-        text='Clone'
+        text='复制'
         split
         menuProps={{
           items: [
             {
               key: 'transfer',
-              text: 'Transfer',
+              text: '转换',
               iconProps: { iconName: 'Forward' },
               onClick: () => {
                 const query = {
@@ -122,7 +123,7 @@ const CloneButton = ({ rawJobConfig, namespace, jobName, enableTransfer }) => {
   } else {
     cloneButton = (
       <PrimaryButton
-        text='Clone'
+        text='复制'
         href={href}
         onClick={onClick}
         disabled={!isClonable(rawJobConfig)}

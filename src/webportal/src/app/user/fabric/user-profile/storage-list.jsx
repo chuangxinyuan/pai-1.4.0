@@ -30,26 +30,26 @@ function getStorageServerUri(storageDetail) {
     case 'azureFile':
       return (
         <>
-          <b>{'StorageAccount: '}</b>
-          {data.accountName}; <b>{'FileShare: '}</b>
-          {data.shareName}; <b>{'Path: '}</b>
+          <b>{'存储数量: '}</b>
+          {data.accountName}; <b>{'共享文件: '}</b>
+          {data.shareName}; <b>{'路径: '}</b>
         </>
       );
     case 'azureBlob':
       return (
         <>
-          <b>{'StorageAccount: '}</b>
-          {data.accountName}; <b>{'Container: '}</b>
-          {data.containerName}; <b>{'Path: '}</b>
+          <b>{'存储数量: '}</b>
+          {data.accountName}; <b>{'容器: '}</b>
+          {data.containerName}; <b>{'路径: '}</b>
         </>
       );
     case 'dshuttle':
       return data.ufsType === 'wasb' ? (
         <>
           {'AzureBlob '}
-          <b>{'StorageAccount: '}</b>
-          {data.accountName}; <b>{'Container: '}</b>
-          {data.containerName}; <b>{'Path: '}</b>
+          <b>{'存储数量: '}</b>
+          {data.accountName}; <b>{'容器: '}</b>
+          {data.containerName}; <b>{'路径: '}</b>
         </>
       ) : (
         data.ufsUri
@@ -59,11 +59,11 @@ function getStorageServerUri(storageDetail) {
     case 'unknown':
       return (
         <>
-          <b>{'Unknown'}</b>
+          <b>{'未知'}</b>
         </>
       );
     default:
-      throw new Error('Invalid storage server type');
+      throw new Error('非法的存储类型');
   }
 }
 
@@ -96,20 +96,20 @@ const StorageList = ({ storageDetails }) => {
   const columns = [
     {
       key: 'serverUri',
-      name: 'Server URI',
+      name: '服务器URI',
       fieldName: 'serverUri',
       isResizable: true,
     },
     {
       key: 'mountPoint',
-      name: 'Mount Point',
+      name: '装载点',
       fieldName: 'mountPoint',
       isResizable: true,
     },
-    { key: 'type', name: 'Server Type', fieldName: 'type', isResizable: true },
+    { key: 'type', name: '类型', fieldName: 'type', isResizable: true },
     {
       key: 'permission',
-      name: 'Permission',
+      name: '权限',
       fieldName: 'permission',
       isResizable: true,
     },

@@ -109,7 +109,7 @@ class JobDetail extends React.Component {
       try {
         nextState.jobInfo = await fetchJobInfo(this.state.selectedAttemptIndex);
       } catch (err) {
-        nextState.error = `fetch job status failed: ${err.message}`;
+        nextState.error = `获取任务状态失败: ${err.message}`;
       }
     };
     const loadJobConfig = async () => {
@@ -122,7 +122,7 @@ class JobDetail extends React.Component {
         if (err instanceof NotFoundError) {
           nextState.jobConfig = null;
         } else {
-          nextState.error = `fetch job config failed: ${err.message}`;
+          nextState.error = `获取任务配置失败: ${err.message}`;
         }
       }
     };
@@ -136,7 +136,7 @@ class JobDetail extends React.Component {
         if (err instanceof NotFoundError) {
           nextState.rawJobConfig = null;
         } else {
-          nextState.error = `fetch job config failed: ${err.message}`;
+          nextState.error = `获取任务配置失败: ${err.message}`;
         }
       }
     };
@@ -150,7 +150,7 @@ class JobDetail extends React.Component {
         if (err instanceof NotFoundError) {
           nextState.sshInfo = null;
         } else {
-          nextState.error = `fetch ssh info failed: ${err.message}`;
+          nextState.error = `获取ssh信息失败: ${err.message}`;
         }
       }
     };
@@ -253,7 +253,7 @@ class JobDetail extends React.Component {
       result.push('');
     }
 
-    this.showEditor('Exit Diagnostics', {
+    this.showEditor('退出诊断信息', {
       language: 'text',
       value: result.join('\n'),
     });
@@ -442,10 +442,10 @@ class JobDetail extends React.Component {
             <Card>
               <Stack gap='m' padding='l2'>
                 <Stack horizontal gap='m' verticalAlign='center'>
-                  <Text>Job Attempt Index</Text>
+                  <Text>选择重试索引</Text>
                   <Dropdown
                     styles={{ root: { width: '150px' } }}
-                    placeholder='Select Attempt Index'
+                    placeholder='选择重试索引'
                     options={attemptIndexOptions}
                     selectedKey={selectedAttemptIndex}
                     onChange={this.onChangeJobAttempt}
@@ -459,13 +459,13 @@ class JobDetail extends React.Component {
                   <Stack gap='l2'>
                     <Stack horizontal gap='l1'>
                       <Stack gap='m'>
-                        <Text>Attempt State</Text>
+                        <Text>重试状态</Text>
                         <StatusBadge
                           status={capitalize(jobInfo.jobStatus.attemptState)}
                         />
                       </Stack>
                       <Stack gap='m'>
-                        <Text>Attempt Creation Time</Text>
+                        <Text>重试时间</Text>
                         <Text>
                           {isNil(jobInfo.jobStatus.appCreatedTime)
                             ? 'N/A'
@@ -477,7 +477,7 @@ class JobDetail extends React.Component {
                         </Text>
                       </Stack>
                       <Stack gap='m'>
-                        <Text>Attempt Duration</Text>
+                        <Text>持续时间</Text>
                         <Text>
                           {getDurationString(
                             this.getTimeDuration(
@@ -488,7 +488,7 @@ class JobDetail extends React.Component {
                         </Text>
                       </Stack>
                       <Stack gap='m'>
-                        <Text>Attempt Running Start Time</Text>
+                        <Text>启动开始时间</Text>
                         <Text>
                           {isNil(jobInfo.jobStatus.appLaunchedTime)
                             ? 'N/A'
@@ -500,7 +500,7 @@ class JobDetail extends React.Component {
                         </Text>
                       </Stack>
                       <Stack gap='m'>
-                        <Text>Attempt Running Duration</Text>
+                        <Text>启动持续时间</Text>
                         <Text>
                           {getDurationString(
                             this.getTimeDuration(
@@ -520,11 +520,11 @@ class JobDetail extends React.Component {
                         }
                         onClick={this.showExitDiagnostics}
                       >
-                        View Exit Diagnostics
+                        查看退出诊断
                       </Link>
                       <Toggle
-                        onText='More Diagnostics'
-                        offText='More Diagnostics'
+                        onText='更多诊断信息'
+                        offText='更多诊断信息'
                         onChange={this.onChangeShowMoreDiagnostics}
                         checked={this.state.showMoreDiagnostics}
                       />

@@ -76,7 +76,7 @@ export const ExportConfig = React.memo(({ jobData, jobProtocol }) => {
       }}
       onClick={_exportYaml}
     >
-      Export
+      导出
     </DefaultButton>
   );
 });

@@ -116,7 +116,7 @@ export const ImportConfig = React.memo(
             ],
           }}
         >
-          {'Import'}
+          {'导入'}
           <input
             type='file'
             style={{

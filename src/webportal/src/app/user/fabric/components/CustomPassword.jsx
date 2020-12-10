@@ -132,7 +132,7 @@ function CustomPassword(props) {
           >
             <DefaultButton
               id='btnSetRandomPassword'
-              text={`Random initial password    ${randomPassword}`}
+              text={`随机初始密码    ${randomPassword}`}
               onClick={handleSetRandomPassword}
               componentRef={randomPasswordButtonRef}
               styles={{

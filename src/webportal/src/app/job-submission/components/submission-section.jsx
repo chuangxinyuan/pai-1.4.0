@@ -176,7 +176,7 @@ export const SubmissionSection = props => {
       const jobCheck = JobProtocol.fromYaml(text);
       if (Object.keys(jobCheck.taskRoles).length > 1) {
         setValidationMsg(
-          'Error: Single job should not have multiple task roles.',
+          '错误: 单个任务不能有多个task roles.',
         );
       }
     }
@@ -198,7 +198,7 @@ export const SubmissionSection = props => {
     <Card>
       <Stack horizontal horizontalAlign='space-between'>
         <DefaultButton
-          text='Back'
+          text='返回'
           disabled={params.has('op') && params.get('op') === 'resubmit'}
           onClick={() => {
             history.push('/');
@@ -212,14 +212,14 @@ export const SubmissionSection = props => {
                   onClick={_submitJob}
                   disabled={!isEmpty(errorMessages)}
                 >
-                  Submit
+                  提交
                 </PrimaryButton>
-                <DefaultButton onClick={_openEditor}>Edit YAML</DefaultButton>
+                <DefaultButton onClick={_openEditor}>编辑YAML</DefaultButton>
               </Stack>
             </Stack>
           </FormShortSection>
           <Stack horizontal verticalAlign='center' gap='s1'>
-            <div>Advanced</div>
+            <div>高级</div>
             <Toggle
               styles={{ root: { margin: 0 } }}
               checked={advanceFlag}
@@ -231,7 +231,7 @@ export const SubmissionSection = props => {
       <MonacoPanel
         isOpen={isEditorOpen}
         onDismiss={_closeEditor}
-        title='Protocol YAML Editor'
+        title='YAML编辑器'
         header={
           <Stack grow horizontal horizontalAlign='end'>
             <DefaultButton
@@ -243,7 +243,7 @@ export const SubmissionSection = props => {
                 rootPressed: [ColorClassNames.blackBackground],
                 label: [ColorClassNames.white],
               }}
-              text='Protocol Schema'
+              text='协议架构'
             />
           </Stack>
         }
@@ -261,7 +261,7 @@ export const SubmissionSection = props => {
                     ColorClassNames.black,
                   ],
                 }}
-                text='Save'
+                text='保存'
                 disabled={validationMsg}
               />
             </StackItem>

@@ -133,7 +133,7 @@ export const MountTreeView = ({ dataList }) => {
         className={c(FontClassNames.mediumPlus)}
         style={{ fontWeight: FontWeights.semibold }}
       >
-        Preview container paths
+        预览容器路径
       </div>
       <TreeNode label={treeData.label} isVisible subpaths={treeData.subpaths} />
     </div>

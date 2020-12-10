@@ -73,7 +73,7 @@ export const Secrets = React.memo(
 
     return (
       <SidebarCard
-        title='Secrets'
+        title='秘密参数'
         tooltip={PROTOCOL_TOOLTIPS.secrets}
         selected={selected}
         onSelect={onSelect}
@@ -81,8 +81,8 @@ export const Secrets = React.memo(
       >
         <Stack gap='m'>
           <Hint>
-            Secret is a special type of parameter which will be masked after
-            submission. You could reference these secrets in command by{' '}
+            秘密参数是一种特殊类型的参数，在提交后会被屏蔽
+            你可以通过如下命令获得{' '}
             <code>{'<% $secrets.secretKey %>'}</code>
           </Hint>
           <div>

@@ -444,6 +444,26 @@ const loadData = () => {
             { type: 'ip-address', targets: [1] },
             { type: 'title-numeric', targets: [2, 3, 4, 5, 6, 7] },
           ],
+          language: {
+            lengthMenu:
+              '<select class="form-control input-xsmall">' +
+              '<option value="20">20</option>' +
+              '<option value="50">50</option>' +
+              '<option value="100">100</option>' +
+              '<option value="-1">All</option>' +
+              '</select>条记录',
+            search: '<span>搜索：</span>',
+            paginate: {
+              previous: '上一页',
+              next: '下一页',
+              first: '第一页',
+              last: '最后',
+            },
+            zeroRecords: '没有内容',
+            info: '总共_PAGES_ 页，显示第_START_ 页',
+            infoEmpty: '0条记录',
+            infoFiltered: '',
+          },
         })
         .api();
       const instanceList = [];

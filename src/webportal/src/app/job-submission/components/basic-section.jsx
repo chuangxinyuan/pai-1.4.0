@@ -63,7 +63,7 @@ export const BasicSection = props => {
                 {sectionTooltip && <TooltipIcon content={sectionTooltip} />}
               </Stack>
               {sectionOptional && (
-                <div className={FontClassNames.tiny}>Optional</div>
+                <div className={FontClassNames.tiny}>（可选）</div>
               )}
             </div>
           </StackItem>

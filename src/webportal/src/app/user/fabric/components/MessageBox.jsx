@@ -56,10 +56,10 @@ function MessageBox(props) {
         <MessageBar
           actions={
             <div>
-              <MessageBarButton onClick={onClickOK}>OK</MessageBarButton>
+              <MessageBarButton onClick={onClickOK}>好的</MessageBarButton>
               {confirm && (
                 <MessageBarButton onClick={onClickCancel}>
-                  Cancel
+                  取消
                 </MessageBarButton>
               )}
             </div>

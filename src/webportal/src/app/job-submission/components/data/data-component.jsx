@@ -80,7 +80,7 @@ const getValidStorageConfigs = (extras, teamStorageConfigs) => {
     config => storageConfigNames.indexOf(config.name) > -1,
   );
   if (storageConfigNames.length !== validStorageConfigs.length) {
-    alert('Some storage configs is invalid, please check');
+    alert('某些存储配置无效，请检查');
   }
   return validStorageConfigs;
 };
@@ -194,7 +194,7 @@ export const DataComponent = React.memo(props => {
   return (
     <HdfsContext.Provider value={{ user: '', api: '', token: '', hdfsClient }}>
       <SidebarCard
-        title='Data'
+        title='数据存储'
         tooltip={PROTOCOL_TOOLTIPS.data}
         selected={props.selected}
         onSelect={props.onSelect}
@@ -204,9 +204,7 @@ export const DataComponent = React.memo(props => {
       >
         <Stack gap='m'>
           <Hint>
-            The data configured here will be mounted or copied into job
-            container. You could use them with <code>{'Container Path'}</code>{' '}
-            value below.
+            此处配置的数据将会存储到任务容器中，你可以通过以下容器地址使用它们。
           </Hint>
           {!isEmpty(teamStorageConfig) && (
             <TeamStorage

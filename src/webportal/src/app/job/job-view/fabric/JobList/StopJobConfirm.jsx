@@ -73,7 +73,7 @@ export default function StopJobConfirm(props) {
                 root: { marginRight: '6px' },
               }}
             />
-            Stop job(s)
+            停止任务
           </span>
         ),
       }}
@@ -82,15 +82,14 @@ export default function StopJobConfirm(props) {
         className={c(t.fw4, FontClassNames.small)}
         style={{ marginLeft: '22px' }}
       >
-        <span>Are you sure you want to stop the selected job(s)?</span>
-        <p>
-          Stopping job(s) will release all the allocated resources for the
-          job(s) and can&lsquo;t be undone.
+        <span>确定要停止所选任务吗?</span>
+        <p>停止任务后，分配给任务的所有资源将被释放
+         释放后也无法撤回这些资源
         </p>
       </div>
       <DialogFooter>
-        <PrimaryButton onClick={onStopJob} text='Confirm' />
-        <DefaultButton onClick={closeDialog} text='Cancel' />
+        <PrimaryButton onClick={onStopJob} text='确认' />
+        <DefaultButton onClick={closeDialog} text='取消' />
       </DialogFooter>
     </Dialog>
   );

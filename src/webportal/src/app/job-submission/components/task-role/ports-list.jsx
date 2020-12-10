@@ -86,11 +86,11 @@ export const PortsList = React.memo(({ onChange, ports }) => {
 
   const labelErrorMessage = useMemo(() => {
     if (!PORT_LABEL_REGEX.test(label)) {
-      return 'Should be string in ^[a-zA-Z_][a-zA-Z0-9_]*$ format';
+      return '应为^[a-zA-Z_][a-zA-Z0-9_]*$格式的字符串';
     }
     const idx = ports.findIndex(item => item.key === label);
     if (idx !== -1 && idx !== currentIdx) {
-      return 'Duplicated port label';
+      return '复制端口标签';
     }
     return null;
   }, [label]);
@@ -98,7 +98,7 @@ export const PortsList = React.memo(({ onChange, ports }) => {
   const columns = [
     {
       key: 'name',
-      name: 'Port Label',
+      name: '端口',
       minWidth: 60,
       className: FontClassNames.mediumPlus,
       onRender: item => (
@@ -115,7 +115,7 @@ export const PortsList = React.memo(({ onChange, ports }) => {
     },
     {
       key: 'value',
-      name: 'Count',
+      name: '数量',
       minWidth: 50,
       className: FontClassNames.mediumPlus,
       onRender: item => (
@@ -132,7 +132,7 @@ export const PortsList = React.memo(({ onChange, ports }) => {
     },
     {
       key: 'action',
-      name: 'Action',
+      name: '操作',
       minWidth: 100,
       onRender: (item, idx) => (
         <div
@@ -160,7 +160,7 @@ export const PortsList = React.memo(({ onChange, ports }) => {
   const { spacing } = getTheme();
 
   return (
-    <BasicSection sectionLabel='Ports' sectionOptional>
+    <BasicSection sectionLabel='端口管理' sectionOptional>
       <FormShortSection>
         <Stack gap='m'>
           <div>
@@ -179,14 +179,14 @@ export const PortsList = React.memo(({ onChange, ports }) => {
               iconProps={{ iconName: 'Add' }}
               onClick={() => setShowDialog(true)}
             >
-              Add
+              添加端口
             </CommandBarButton>
             <Dialog
               hidden={!showDialog}
               onDismiss={onDialogDismiss}
               dialogContentProps={{
                 type: DialogType.normal,
-                title: 'Add port',
+                title: '添加端口',
               }}
               modalProps={{
                 isBlocking: true,
@@ -195,17 +195,17 @@ export const PortsList = React.memo(({ onChange, ports }) => {
             >
               <Stack gap='m'>
                 <div>
-                  <p>The port value will be assigned randomly.</p>
+                  <p>端口号将随机分配。</p>
                   <p>
                     <div>
-                      {`You can get the assigned port value (comma separated list if count > 1) through the environment variable:`}
+                      {`您可以通过环境变量获取分配的端口值 (如果数量大于1，则以逗号分隔) :`}
                     </div>
                     <code>PAI_PORT_LIST_$taskRole_$taskIndex_$portLabel</code>
                   </p>
                 </div>
                 <div>
                   <TextField
-                    label='Port Label'
+                    label='端口'
                     value={label}
                     onChange={(e, val) => setLabel(val)}
                     errorMessage={labelErrorMessage}
@@ -213,7 +213,7 @@ export const PortsList = React.memo(({ onChange, ports }) => {
                 </div>
                 <div>
                   <SpinButton
-                    label='Count'
+                    label='数量'
                     labelPosition='Top'
                     defaultValue={currentIdx != null && ports[currentIdx].value}
                     min={1}
@@ -226,10 +226,10 @@ export const PortsList = React.memo(({ onChange, ports }) => {
               <DialogFooter>
                 <PrimaryButton
                   onClick={onDialogSave}
-                  text='Save'
+                  text='保存'
                   disabled={labelErrorMessage}
                 />
-                <DefaultButton onClick={onDialogDismiss} text='Cancel' />
+                <DefaultButton onClick={onDialogDismiss} text='取消' />
               </DialogFooter>
             </Dialog>
           </div>

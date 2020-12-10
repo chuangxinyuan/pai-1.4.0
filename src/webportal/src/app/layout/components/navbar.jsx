@@ -90,7 +90,7 @@ const Navbar = ({ onToggleSidebar, mobile, userInfo }) => {
         </CustomButton>
         <CustomButton
           key='help'
-          href='https://openpai.readthedocs.io/en/latest/manual/cluster-user/README.html'
+          href='https://openpai.readthedocs.io/zh_CN/latest/manual/cluster-user/README.html'
           iconProps={{ iconName: 'Help' }}
           style={{
             textDecoration: 'none',
@@ -100,7 +100,7 @@ const Navbar = ({ onToggleSidebar, mobile, userInfo }) => {
         <div ref={menuButtonRef}>
           <CustomButton
             key='menu'
-            text={!mobile && `Welcome, ${username}`}
+            text={!mobile && `欢迎, ${username}`}
             styles={concatStyleSets(
               {
                 root: { height: '100%' },
@@ -136,7 +136,7 @@ const Navbar = ({ onToggleSidebar, mobile, userInfo }) => {
         >
           <div>
             <div className={c(t.flex)}>
-              <div className={c(t.pa3, t.flexAuto)}>Platform for AI</div>
+              <div className={c(t.pa3, t.flexAuto)}>人工智能资源调度管理平台</div>
               <CommandBarButton
                 styles={{
                   root: [
@@ -146,7 +146,7 @@ const Navbar = ({ onToggleSidebar, mobile, userInfo }) => {
                 }}
                 onClick={userLogout}
               >
-                Sign Out
+                登出
               </CommandBarButton>
             </div>
             <div className={c(t.flex, t.pa3)}>
@@ -176,7 +176,7 @@ const Navbar = ({ onToggleSidebar, mobile, userInfo }) => {
                 </div>
                 <div className={t.mt3}>{userInfo.email}</div>
                 <div className={t.mt4}>
-                  <Link href='/user-profile.html'>View my profile</Link>
+                  <Link href='/user-profile.html'>查看个人资料</Link>
                 </div>
               </div>
             </div>

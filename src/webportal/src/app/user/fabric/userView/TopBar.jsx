@@ -66,7 +66,7 @@ function KeywordSearchBox() {
   return (
     <SearchBox
       underlined
-      placeholder='Filter by keyword'
+      placeholder='关键字搜索'
       styles={{
         root: {
           width: '220px',
@@ -103,7 +103,7 @@ function TopBar() {
    */
   const btnAddUser = {
     key: 'addUser',
-    name: 'Add User',
+    name: '添加用户',
     buttonStyles: transparentStyles,
     iconProps: {
       iconName: 'Add',
@@ -116,7 +116,7 @@ function TopBar() {
    */
   const btnCreateBulkUsers = {
     key: 'createBulkUsers',
-    name: 'Create Bulk Users',
+    name: '批量创建用户',
     buttonStyles: transparentStyles,
     iconProps: {
       iconName: 'Stack',
@@ -130,7 +130,7 @@ function TopBar() {
    */
   const btnRemove = {
     key: 'remove',
-    name: 'Remove',
+    name: '移除',
     buttonStyles: transparentStyles,
     iconProps: {
       iconName: 'UserRemove',
@@ -161,7 +161,7 @@ function TopBar() {
    */
   const btnEdit = {
     key: 'edit',
-    name: 'Edit',
+    name: '编辑',
     buttonStyles: transparentStyles,
     iconProps: {
       iconName: 'EditContact',
@@ -176,7 +176,7 @@ function TopBar() {
    */
   const btnBatchEditPassword = {
     key: 'batchEditPassword',
-    name: 'Batch Edit Passwords',
+    name: '批量编辑密码',
     buttonStyles: transparentStyles,
     iconProps: {
       iconName: 'EditStyle',
@@ -190,7 +190,7 @@ function TopBar() {
    */
   const btnBatchEditVirtualClusters = {
     key: 'BatchEditVirtualClusters',
-    name: 'Batch Edit Virtual Clusters',
+    name: '批量编辑虚拟集群',
     buttonStyles: transparentStyles,
     iconProps: {
       iconName: 'FullWidthEdit',
@@ -221,7 +221,7 @@ function TopBar() {
    */
   const btnRefresh = {
     key: 'refresh',
-    name: 'Refresh',
+    name: '刷新',
     buttonStyles: transparentStyles,
     iconProps: {
       iconName: 'Refresh',
@@ -243,7 +243,7 @@ function TopBar() {
    */
   const btnFilters = {
     key: 'filters',
-    name: 'Filters',
+    name: '筛选',
     iconProps: { iconName: 'Filter' },
     menuIconProps: { iconName: active ? 'ChevronUp' : 'ChevronDown' },
     onClick() {
@@ -257,7 +257,7 @@ function TopBar() {
           menuIconProps={item.menuIconProps}
           styles={transparentStyles}
         >
-          Filters
+          筛选
         </CommandBarButton>
       );
     },
@@ -268,7 +268,7 @@ function TopBar() {
    */
   const btnClear = {
     key: 'clear',
-    name: 'Clear',
+    name: '清除',
     buttonStyles: { root: { background: 'transparent', height: '100%' } },
     iconOnly: true,
     iconProps: {
@@ -317,7 +317,7 @@ function TopBar() {
     function getItem(key) {
       return {
         key,
-        text: key ? 'Yes' : 'No',
+        text: key ? '是' : '否',
         canCheck: true,
         checked: filter.admins.has(key),
         onClick: onClick,
@@ -326,7 +326,7 @@ function TopBar() {
 
     return {
       key: 'admin',
-      text: 'Admin',
+      text: '管理员',
       buttonStyles: transparentStyles,
       iconProps: {
         iconName: 'Admin',
@@ -339,7 +339,7 @@ function TopBar() {
           },
           {
             key: 'clear',
-            text: 'Clear',
+            text: '清除',
             onClick: onClearClick,
           },
         ]),
@@ -394,7 +394,7 @@ function TopBar() {
 
     return {
       key: 'virtualCluster',
-      name: 'Virtual Cluster',
+      name: '虚拟集群',
       buttonStyles: transparentStyles,
       iconProps: {
         iconName: 'CellPhone',
@@ -407,7 +407,7 @@ function TopBar() {
           },
           {
             key: 'clear',
-            text: 'Clear',
+            text: '清除',
             onClick: onClearClick,
           },
         ]),
@@ -426,7 +426,7 @@ function TopBar() {
       topBarItems.push(btnBatchEditPassword);
       if (selectedAdmin) {
         const disabledTip =
-          'Unable to do this for administrators, please make sure the multi-option does not include an administrator';
+          '无法为管理员执行此操作，请确保多选项不包含管理员';
         topBarItems.push(
           Object.assign(btnBatchEditVirtualClusters, {
             disabled: true,
@@ -446,7 +446,7 @@ function TopBar() {
         topBarItems.push(
           Object.assign(btnRemove, {
             disabled: true,
-            disabledTip: 'The administrator could not be removed',
+            disabledTip: '无法删除管理员',
           }),
         );
       } else {

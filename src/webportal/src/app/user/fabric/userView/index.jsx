@@ -138,8 +138,8 @@ export default function UserView() {
   const removeUsers = () => {
     const selected = getSelectedUsers();
     showMessageBoxWithConfirm(
-      `Are you sure to remove ${
-        selected.length === 1 ? 'the user' : 'these users'
+      `确定要删除 ${
+        selected.length === 1 ? '该用户' : '这些用户'
       }?`,
     ).then(confirmed => {
       if (confirmed) {
@@ -151,11 +151,11 @@ export default function UserView() {
         ).then(results => {
           hideLoading();
           const errors = results.filter(result => result instanceof Error);
-          let message = `Remove ${selected.length === 1 ? 'user' : 'users'} `;
+          let message = `移除 ${selected.length === 1 ? '个用户' : '个用户'} `;
           if (errors.length === 0) {
-            message += 'successfully.';
+            message += '成功.';
           } else {
-            message += `with ${errors.length} failed.`;
+            message += ` ${errors.length} 失败.`;
             errors.forEach(error => {
               message += `\n${String(error)}`;
             });
@@ -198,7 +198,7 @@ export default function UserView() {
       findIndex(getSelectedUsers(), user => user.admin) !== -1;
     if (selectedAdmin) {
       showMessageBoxWithConfirm(
-        'Your options include the administrator, please confirm whether to continue this operation',
+        '您的选项包括管理员，请确认是否继续此操作',
       ).then(confirmed => {
         if (confirmed) {
           setBatchPasswordEditor({ isOpen: true });

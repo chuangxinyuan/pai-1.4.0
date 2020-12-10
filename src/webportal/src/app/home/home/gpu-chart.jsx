@@ -115,7 +115,7 @@ const GpuChart = ({ style, gpuPerNode, virtualClusters, userInfo }) => {
             dedicated: x => (x === 0 ? '' : x),
           },
         },
-        empty: { label: { text: 'No available GPU nodes now' } },
+        empty: { label: { text: '无可用GPU节点' } },
       },
       padding: {
         left: 20,
@@ -127,7 +127,7 @@ const GpuChart = ({ style, gpuPerNode, virtualClusters, userInfo }) => {
       axis: {
         x: {
           label: {
-            text: 'Number of available GPUs on the node',
+            text: '可用GPU节点数量',
             position: 'outter-top',
           },
           tick: {
@@ -139,7 +139,7 @@ const GpuChart = ({ style, gpuPerNode, virtualClusters, userInfo }) => {
         },
         y: {
           label: {
-            text: 'Amount of nodes',
+            text: '节点总数',
             position: 'outter-top',
           },
           tick: {
@@ -198,7 +198,7 @@ const GpuChart = ({ style, gpuPerNode, virtualClusters, userInfo }) => {
                           backgroundColor: DEDICATED_VC_COLOR,
                         }}
                       ></div>
-                      <div>Available nodes in dedicated VC:</div>
+                      <div>专用VC中的可用节点:</div>
                       <div style={{ fontWeight: FontWeights.semibold }}>
                         {d[1].value}
                       </div>
@@ -306,7 +306,7 @@ const GpuChart = ({ style, gpuPerNode, virtualClusters, userInfo }) => {
       <Stack styles={{ root: [{ height: '100%' }] }} gap='l1'>
         <Stack.Item>
           <Stack horizontal horizontalAlign='space-between'>
-            <div className={FontClassNames.mediumPlus}>Available GPU nodes</div>
+            <div className={FontClassNames.mediumPlus}>可用 GPU 节点</div>
             <div>
               {hasDedicatedVC && (
                 <div>
@@ -321,7 +321,7 @@ const GpuChart = ({ style, gpuPerNode, virtualClusters, userInfo }) => {
                             backgroundColor: SHARED_VC_COLOR,
                           }}
                         ></div>
-                        <div>Available nodes in shared VC</div>
+                        <div>共享VC中的可用节点</div>
                       </Stack>
                       <Stack horizontal gap='s1' verticalAlign='center'>
                         <div
@@ -331,7 +331,7 @@ const GpuChart = ({ style, gpuPerNode, virtualClusters, userInfo }) => {
                             backgroundColor: DEDICATED_VC_COLOR,
                           }}
                         ></div>
-                        <div>Available nodes in dedicated VC</div>
+                        <div>专用VC中的可用节点</div>
                       </Stack>
                     </Stack>
                   </MediaQuery>
@@ -346,7 +346,7 @@ const GpuChart = ({ style, gpuPerNode, virtualClusters, userInfo }) => {
                             backgroundColor: SHARED_VC_COLOR,
                           }}
                         ></div>
-                        <div>Available nodes in shared VC</div>
+                        <div>共享VC中的可用节点</div>
                       </Stack>
                       <Stack horizontal gap='s1' verticalAlign='center'>
                         <div
@@ -356,7 +356,7 @@ const GpuChart = ({ style, gpuPerNode, virtualClusters, userInfo }) => {
                             backgroundColor: DEDICATED_VC_COLOR,
                           }}
                         ></div>
-                        <div>Available nodes in dedicated VC</div>
+                        <div>专用VC中的可用节点</div>
                       </Stack>
                     </Stack>
                   </MediaQuery>
@@ -391,7 +391,7 @@ const GpuChart = ({ style, gpuPerNode, virtualClusters, userInfo }) => {
                                 padding: spacing.s1,
                               }}
                             >
-                              Available nodes in shared VC
+                              共享VC中的可用节点
                             </Card>
                           ),
                         }}
@@ -429,7 +429,7 @@ const GpuChart = ({ style, gpuPerNode, virtualClusters, userInfo }) => {
                                 padding: spacing.s1,
                               }}
                             >
-                              Available nodes in dedicated VC
+                              专用VC中的可用节点
                             </Card>
                           ),
                         }}

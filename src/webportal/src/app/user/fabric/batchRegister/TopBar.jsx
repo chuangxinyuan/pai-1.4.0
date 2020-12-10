@@ -40,7 +40,7 @@ function TopBar() {
    */
   const btnBrowse = {
     key: 'browse',
-    name: 'Browse...',
+    name: '浏览...',
     iconProps: {
       iconName: 'OpenFolderHorizontal',
     },
@@ -54,7 +54,7 @@ function TopBar() {
    */
   const btnDownloadTemplate = {
     key: 'downloadTemplate',
-    name: 'Download Template',
+    name: '下载模板',
     iconProps: {
       iconName: 'Download',
     },
@@ -68,7 +68,7 @@ function TopBar() {
    */
   const btnAddNew = {
     key: 'addNew',
-    name: 'Add New',
+    name: '添加',
     iconProps: {
       iconName: 'Add',
     },

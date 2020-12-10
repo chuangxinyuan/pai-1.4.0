@@ -103,11 +103,11 @@ export default function BatchRegister() {
   const checkCSVFormat = csvResult => {
     const fields = csvResult.meta.fields;
     if (fields.indexOf(columnUsername) === -1) {
-      showMessageBox('Missing column of username in the CSV file!');
+      showMessageBox('CSV文件中缺少用户名列!');
       return false;
     }
     if (fields.indexOf(columnPassword) === -1) {
-      showMessageBox('Missing column of password in the CSV file!');
+      showMessageBox('CSV文件中缺少密码列!');
       return false;
     }
     if (csvResult.errors.length > 0) {
@@ -117,7 +117,7 @@ export default function BatchRegister() {
       return false;
     }
     if (csvResult.data.length === 0) {
-      showMessageBox('Empty CSV file');
+      showMessageBox('空CSV文件');
       return false;
     }
     return true;
@@ -132,7 +132,7 @@ export default function BatchRegister() {
           const vc = parsedVCs[j];
           if (vc) {
             if (virtualClusters.indexOf(vc) === -1) {
-              showMessageBox(`${vc} is not a valid virtual cluster name`);
+              showMessageBox(`${vc} 不是一个有效的虚拟集群名称`);
               return false;
             }
           }
@@ -147,7 +147,7 @@ export default function BatchRegister() {
 
   const parseUserInfosFromCSV = csvContent => {
     if (!csvContent) {
-      showMessageBox('Empty CSV file');
+      showMessageBox('空的CSV文件');
       hideLoading();
       return;
     }
@@ -176,7 +176,7 @@ export default function BatchRegister() {
       if (!file) {
         return;
       }
-      showLoading('Uploading...');
+      showLoading('上传中...');
       const reader = new FileReader();
       reader.onload = function(e) {
         parseUserInfosFromCSV(e.target.result);
@@ -184,7 +184,7 @@ export default function BatchRegister() {
       };
       reader.onerror = function(e) {
         hideLoading();
-        showMessageBox('File could not be read.');
+        showMessageBox('无法读取文件.');
       };
       reader.readAsText(file);
     };
@@ -197,7 +197,7 @@ export default function BatchRegister() {
   };
 
   const submit = async () => {
-    showLoading('Processing...');
+    showLoading('...');
     for (let i = 0; i < userInfos.length; i++) {
       const userInfo = userInfos[i];
 
@@ -207,7 +207,7 @@ export default function BatchRegister() {
 
       const successResult = {
         isSuccess: true,
-        message: `User ${userInfo[columnUsername]} created successfully`,
+        message: `用户 ${userInfo[columnUsername]} 创建成功`,
       };
 
       const result = await createUserRequest(
@@ -223,7 +223,7 @@ export default function BatchRegister() {
         .catch(err => {
           return {
             isSuccess: false,
-            message: `User ${userInfo[columnUsername]} created failed: ${String(
+            message: `用户 ${userInfo[columnUsername]} 创建失败: ${String(
               err,
             )}`,
           };
@@ -239,11 +239,9 @@ export default function BatchRegister() {
     setTimeout(() => {
       const finishedStatus = countBy(userInfos, 'status.isSuccess');
       if (finishedStatus.false) {
-        showMessageBox(
-          `Create users finished with ${finishedStatus.false} failed.`,
-        );
+        showMessageBox(`创建用户 ${finishedStatus.false} 失败.`);
       } else {
-        showMessageBox('Create users finished.');
+        showMessageBox('创建用户完成.');
       }
     }, 100);
   };
@@ -298,11 +296,9 @@ export default function BatchRegister() {
 
   useEffect(() => {
     if (!checkAdmin()) {
-      showMessageBox('Non-admin is not allowed to do this operation.').then(
-        () => {
-          window.location.href = '/';
-        },
-      );
+      showMessageBox('不允许非管理员执行此操作.').then(() => {
+        window.location.href = '/';
+      });
     }
   }, []);
 

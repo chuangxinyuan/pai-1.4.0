@@ -67,7 +67,7 @@ const UserProfileHeader = ({ userInfo, onEditProfile, onEditPassword }) => {
     const confirmNewPassword =
       confirmNewPasswordRef.current && confirmNewPasswordRef.current.value;
     if (confirmNewPassword !== newPassword) {
-      setError('Please enter the same password');
+      setError('请再输一次密码');
       return;
     }
     setProcessing(true);
@@ -144,7 +144,7 @@ const UserProfileHeader = ({ userInfo, onEditProfile, onEditPassword }) => {
               }}
               onClick={() => setDialog(DIALOG_PROFILE)}
             >
-              Edit Profile
+              编辑个人资料
             </PrimaryButton>
           </div>
           <div className={t.mt3}>
@@ -156,7 +156,7 @@ const UserProfileHeader = ({ userInfo, onEditProfile, onEditPassword }) => {
               }}
               onClick={() => setDialog(DIALOG_PASSWORD)}
             >
-              Edit Password
+              修改密码
             </DefaultButton>
           </div>
           {/* error dialog */}
@@ -182,7 +182,7 @@ const UserProfileHeader = ({ userInfo, onEditProfile, onEditPassword }) => {
             onDismiss={() => setDialog(0)}
             dialogContentProps={{
               type: DialogType.normal,
-              title: 'Edit Profile',
+              title: '编辑个人资料',
             }}
             modalProps={{
               isBlocking: true,
@@ -193,11 +193,11 @@ const UserProfileHeader = ({ userInfo, onEditProfile, onEditPassword }) => {
               <table style={{ width: '100%' }}>
                 <tbody>
                   <tr>
-                    <td className={c(t.pa2, t.tr)}>Name</td>
+                    <td className={c(t.pa2, t.tr)}>用户名</td>
                     <td className={t.pa3}>{userInfo.username}</td>
                   </tr>
                   <tr>
-                    <td className={c(t.pa2, t.tr)}>Email</td>
+                    <td className={c(t.pa2, t.tr)}>邮箱</td>
                     <td className={t.pa3}>
                       <TextField
                         componentRef={emailRef}
@@ -212,12 +212,12 @@ const UserProfileHeader = ({ userInfo, onEditProfile, onEditPassword }) => {
               <PrimaryButton
                 onClick={onSaveProfile}
                 disabled={processing}
-                text='Save'
+                text='保存'
               />
               <DefaultButton
                 onClick={() => setDialog(0)}
                 disabled={processing}
-                text='Cancel'
+                text='取消'
               />
             </DialogFooter>
           </Dialog>
@@ -227,7 +227,7 @@ const UserProfileHeader = ({ userInfo, onEditProfile, onEditPassword }) => {
             onDismiss={() => setDialog(0)}
             dialogContentProps={{
               type: DialogType.normal,
-              title: 'Edit Password',
+              title: '修改密码',
             }}
             modalProps={{
               isBlocking: true,
@@ -236,19 +236,18 @@ const UserProfileHeader = ({ userInfo, onEditProfile, onEditPassword }) => {
           >
             <div>
               <div>
-                If password is changed, all browser tokens will be revoked and
-                you will be logged out.
+               一旦密码被修改，所有token将会被撤回，需要重新登录使用
               </div>
               <div className={t.mt3}>
                 <TextField
-                  label='Old Password'
+                  label='旧密码'
                   componentRef={oldPasswordRef}
                   type='password'
                 />
               </div>
               <div className={t.mt3}>
                 <TextField
-                  label='New Password'
+                  label='新密码'
                   componentRef={newPasswordRef}
                   type='password'
                   autoComplete='new-password'
@@ -256,7 +255,7 @@ const UserProfileHeader = ({ userInfo, onEditProfile, onEditPassword }) => {
               </div>
               <div className={t.mt3}>
                 <TextField
-                  label='Confirm New Password'
+                  label='再次输入新密码'
                   componentRef={confirmNewPasswordRef}
                   type='password'
                   autoComplete='new-password'
@@ -267,12 +266,12 @@ const UserProfileHeader = ({ userInfo, onEditProfile, onEditPassword }) => {
               <PrimaryButton
                 onClick={onSavePassword}
                 disabled={processing}
-                text='Save'
+                text='保存'
               />
               <DefaultButton
                 onClick={() => setDialog(0)}
                 disabled={processing}
-                text='Cancel'
+                text='取消'
               />
             </DialogFooter>
           </Dialog>

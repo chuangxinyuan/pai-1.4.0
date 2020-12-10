@@ -76,7 +76,7 @@ export default function BatchPasswordEditor({ isOpen = false, hide }) {
       }
     }
 
-    await showMessageBox('Update passwords successfully');
+    await showMessageBox('成功更新密码');
     setLock(false);
     hide();
     refreshAllUsers();
@@ -113,8 +113,8 @@ export default function BatchPasswordEditor({ isOpen = false, hide }) {
                   <td className={tdPaddingStyle} style={{ minWidth: '280px' }}>
                     <CustomPassword
                       componentRef={passwordRef}
-                      placeholder='Enter password'
-                      description="User's browser tokens will be revoked if password is changed"
+                      placeholder='请输入密码'
+                      description="如果密码更改，用户的浏览器令牌将被吊销"
                     />
                   </td>
                 </tr>
@@ -131,12 +131,12 @@ export default function BatchPasswordEditor({ isOpen = false, hide }) {
             <Stack horizontal={true} horizontalAlign='center' gap={spacing.s1}>
               <StackItem>
                 <PrimaryButton type='submit' disabled={lock} autoFocus>
-                  Save
+                  保存
                 </PrimaryButton>
               </StackItem>
               <StackItem>
                 <DefaultButton disabled={lock} onClick={handleCancel}>
-                  Cancel
+                  取消
                 </DefaultButton>
               </StackItem>
             </Stack>

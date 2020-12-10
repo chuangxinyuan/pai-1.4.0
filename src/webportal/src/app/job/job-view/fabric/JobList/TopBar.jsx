@@ -55,7 +55,7 @@ function KeywordSearchBox() {
   return (
     <SearchBox
       underlined
-      placeholder='Filter by keyword'
+      placeholder='关键词搜索'
       styles={{ root: rootStyles }}
       value={filter.keyword}
       onChange={onKeywordChange}
@@ -97,7 +97,7 @@ function TopBar() {
         } else {
           const data = await response.json().catch(() => {
             throw new Error(
-              `Failed to fetch user info: ${response.status} ${response.statusText}`,
+              `无法获取用户信息: ${response.status} ${response.statusText}`,
             );
           });
           if (data.message) {
@@ -105,11 +105,11 @@ function TopBar() {
               alert(data.message);
               clearToken();
             } else {
-              throw new Error(`Failed to fetch user info: ${data.message}`);
+              throw new Error(`无法获取用户信息: ${data.message}`);
             }
           } else {
             throw new Error(
-              `Failed to fetch user info: ${response.status} ${response.statusText}`,
+              `无法获取用户信息: ${response.status} ${response.statusText}`,
             );
           }
         }
@@ -135,7 +135,7 @@ function TopBar() {
         } else {
           const data = await response.json().catch(() => {
             throw new Error(
-              `Failed to fetch virtual cluster info: ${response.status} ${response.statusText}`,
+              `无法获取虚拟群集信息: ${response.status} ${response.statusText}`,
             );
           });
           if (data.message) {
@@ -144,12 +144,12 @@ function TopBar() {
               clearToken();
             } else {
               throw new Error(
-                `Failed to fetch virtual cluster info: ${data.message}`,
+                `无法获取虚拟群集信息: ${data.message}`,
               );
             }
           } else {
             throw new Error(
-              `Failed to fetch virtual cluster info: ${response.status} ${response.statusText}`,
+              `无法获取虚拟群集信息: ${response.status} ${response.statusText}`,
             );
           }
         }
@@ -183,7 +183,7 @@ function TopBar() {
   function getNew() {
     return {
       key: 'new',
-      name: 'New',
+      name: '新建',
       buttonStyles: {
         root: { backgroundColor: 'transparent', height: '100%' },
       },
@@ -200,7 +200,7 @@ function TopBar() {
   function getRefresh() {
     return {
       key: 'refresh',
-      name: 'Refresh',
+      name: '刷新',
       buttonStyles: {
         root: { backgroundColor: 'transparent', height: '100%' },
       },
@@ -231,7 +231,7 @@ function TopBar() {
             menuIconProps={item.menuIconProps}
             styles={{ root: { backgroundColor: 'transparent' } }}
           >
-            Filter
+            筛选
           </CommandBarButton>
         );
       },
@@ -291,7 +291,7 @@ function TopBar() {
           <Stack horizontal>
             <FilterButton
               styles={{ root: { backgroundColor: 'transparent' } }}
-              text='User'
+              text='用户'
               iconProps={{ iconName: 'Contact' }}
               items={userItems}
               selectedItems={selectedItems}
@@ -311,7 +311,7 @@ function TopBar() {
             />
             <FilterButton
               styles={{ root: { backgroundColor: 'transparent' } }}
-              text='Virtual Cluster'
+              text='虚拟集群'
               iconProps={{ iconName: 'CellPhone' }}
               items={Object.keys(virtualClusters)}
               selectedItems={Array.from(filter.virtualClusters)}
@@ -330,7 +330,7 @@ function TopBar() {
             />
             <FilterButton
               styles={{ root: { backgroundColor: 'transparent' } }}
-              text='Status'
+              text='状态'
               iconProps={{ iconName: 'Clock' }}
               items={Object.keys(statuses)}
               selectedItems={Array.from(filter.statuses)}

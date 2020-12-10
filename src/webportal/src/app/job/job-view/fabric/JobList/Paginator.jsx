@@ -35,7 +35,7 @@ function GotoPage(props) {
       />
       <DefaultButton
         styles={{ root: { minWidth: '40px' } }}
-        text='GO'
+        text='确定'
         onClick={() => props.setPage(pageIndex - 1)}
       />
     </Stack>
@@ -80,7 +80,7 @@ export default function Paginator() {
 
   farItems.push({
     key: 'itemsPerPage',
-    text: `${itemsPerPage} items per page`,
+    text: `${itemsPerPage} 条/页`,
     buttonStyles,
     menuIconProps: { iconName: 'ChevronUp' },
     subMenuProps: {
@@ -94,7 +94,7 @@ export default function Paginator() {
 
   farItems.push({
     key: 'range',
-    text: `${start}-${end} of ${length}`,
+    text: `${start}-${end} / ${length}`,
     buttonStyles,
     checked: true,
     disabled: true,

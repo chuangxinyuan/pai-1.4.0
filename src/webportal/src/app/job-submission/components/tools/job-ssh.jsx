@@ -122,7 +122,7 @@ export const JobSSH = ({ extras, onExtrasChange }) => {
         <TooltipIcon content={PROTOCOL_TOOLTIPS.ssh} />
       </Stack>
       <Toggle
-        label={'Enable User SSH'}
+        label={'使用SSH'}
         inlineLabel={true}
         checked={!isEmpty(sshPlugin.userssh)}
         onChange={_onUsersshEnable}
@@ -130,25 +130,25 @@ export const JobSSH = ({ extras, onExtrasChange }) => {
       {!isEmpty(sshPlugin.userssh) && (
         <Stack horizontal gap='l1'>
           <Dropdown
-            placeholder='Select user ssh key type...'
+            placeholder='选择用户ssh密钥类型...'
             options={USERSSH_TYPE_OPTIONS}
             onChange={_onUsersshTypeChange}
             selectedKey={sshPlugin.userssh.type}
             disabled={Object.keys(USERSSH_TYPE_OPTIONS).length <= 1}
           />
           <TextField
-            placeholder='Enter ssh public key'
+            placeholder='输入ssh公钥'
             disabled={sshPlugin.userssh.type === 'none'}
             errorMessage={
               isEmpty(sshPlugin.getUserSshValue())
-                ? 'Please Enter Valid SSH public key'
+                ? '输入ssh公钥'
                 : null
             }
             onChange={_onUsersshValueChange}
             value={sshPlugin.getUserSshValue()}
           />
           <DefaultButton onClick={ev => openSshGenerator(ev)}>
-            SSH Key Generator
+            SSH密钥生成器
           </DefaultButton>
           {sshGenerator.isOpen && (
             <SSHGenerator

@@ -41,7 +41,7 @@ export const CommandSection = props => {
   };
 
   return (
-    <BasicSection sectionLabel='Command'>
+    <BasicSection sectionLabel='命令行'>
       <FormShortSection>
         <MonacoTextField
           monacoProps={{ height: 250, language: 'shell' }}
@@ -49,7 +49,7 @@ export const CommandSection = props => {
           placeholder={COMMAND_PLACEHOLDER}
           onChange={_onChange}
           completionItems={[...PAI_ENV_VAR.map(x => x.key)]}
-          errorMessage={isEmpty(value) ? 'Commands can not be empty' : null}
+          errorMessage={isEmpty(value) ? '命令行不能为空' : null}
         />
       </FormShortSection>
     </BasicSection>

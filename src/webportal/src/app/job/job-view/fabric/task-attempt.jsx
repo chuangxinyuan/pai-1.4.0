@@ -78,19 +78,19 @@ const TaskAttemptPage = () => {
               iconProps={{ iconName: 'revToggleKey' }}
               href={`job-detail.html?username=${userName}&jobName=${jobName}`}
             >
-              Go to Job Detail
+              任务详情
             </ActionButton>
           </div>
           <Card style={{ padding: 10 }}>
             <Stack>
               <Stack horizontal gap='m' padding='m'>
-                <Text>Job Name:</Text>
+                <Text>任务名称:</Text>
                 <Text>{jobName}</Text>
               </Stack>
               <HorizontalLine />
               <Stack horizontal gap='l1' padding='m'>
                 <Stack gap='m'>
-                  <Text>Job Attempt Index</Text>
+                  <Text>任务重试索引</Text>
                   <Text>{jobAttemptIndex}</Text>
                 </Stack>
                 <Stack gap='m'>
@@ -98,7 +98,7 @@ const TaskAttemptPage = () => {
                   <Text>{taskRoleName}</Text>
                 </Stack>
                 <Stack gap='m'>
-                  <Text>Task Index</Text>
+                  <Text>Task索引</Text>
                   <Text>{taskIndex}</Text>
                 </Stack>
                 <Stack gap='m'>
@@ -109,15 +109,15 @@ const TaskAttemptPage = () => {
               <HorizontalLine />
               <Stack horizontal gap='l1' padding='m'>
                 <Stack gap='m'>
-                  <Text>Task State</Text>
+                  <Text>Task状态</Text>
                   <StatusBadge status={capitalize(taskStatus.taskState)} />
                 </Stack>
                 <Stack gap='m'>
-                  <Text>Task Retries</Text>
+                  <Text>Task重试</Text>
                   <Text>{taskStatus.retries}</Text>
                 </Stack>
                 <Stack gap='m'>
-                  <Text>Task Creation Time</Text>
+                  <Text>Task创建时间</Text>
                   <Text>
                     {isNil(taskStatus.createdTime)
                       ? 'N/A'
@@ -127,7 +127,7 @@ const TaskAttemptPage = () => {
                   </Text>
                 </Stack>
                 <Stack gap='m'>
-                  <Text>Task Duration</Text>
+                  <Text>Task持续时间</Text>
                   <Text>
                     {getDurationString(
                       getTimeDuration(
@@ -138,7 +138,7 @@ const TaskAttemptPage = () => {
                   </Text>
                 </Stack>
                 <Stack gap='m'>
-                  <Text>Task Running Start Time</Text>
+                  <Text>Task启动时间</Text>
                   <Text>
                     {isNil(taskStatus.launchedTime)
                       ? 'N/A'
@@ -148,7 +148,7 @@ const TaskAttemptPage = () => {
                   </Text>
                 </Stack>
                 <Stack gap='m'>
-                  <Text>Task Running Duration</Text>
+                  <Text>Task启动持续时间</Text>
                   <Text>
                     {getDurationString(
                       getTimeDuration(

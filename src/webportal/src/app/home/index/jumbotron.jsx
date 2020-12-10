@@ -34,21 +34,22 @@ const Jumbotron = ({ showLoginModal }) => (
       <div className={c(t.flex, t.flexColumn, t.itemsCenter, t.pv4)}>
         <SignInBackground style={{ maxWidth: '20rem' }} />
         <div className={c(t.flex, t.flexColumn, t.itemsCenter)}>
-          <div className={c(FontClassNames.superLarge, t.pt3)}>
-            Platform for AI
+          <div className={c(FontClassNames.large, t.pt3)}>
+            人工智能资源调度管理平台
           </div>
           <div
             className={c(FontClassNames.mediumPlus, t.tc, t.lhCopy, t.mv4)}
             style={{ maxWidth: '20rem' }}
           >
-            Platform for AI is an open source platform that provides complete AI
-            model training and resource management capabilities, it is easy to
-            extend and supports on-premise, cloud and hybrid environments in
-            various scale.
+            融合微软算力调度项目OpenPAI,突破新型GPU调度、混合云架构、容器和虚机混合编排蓝图部署，适用于人工智能应用的新型API安全网关等场景落地关键技术，
+            开发了人工智能资源调度平台，
+            <br />
+            支持Tensorflow、PyTorch、MXNet、Keras等多种深度学习计算框架，适配智慧金融、智慧物流、智慧医疗等各种人工智能场景，
+            具备为数据处理标记、模型开发、模型训练优化和部署全程保驾护航的能力。
           </div>
           <PrimaryButton
             styles={{ root: { maxWidth: '6rem' } }}
-            text='Sign in'
+            text='登录'
             onClick={showLoginModal}
           />
         </div>
@@ -57,23 +58,26 @@ const Jumbotron = ({ showLoginModal }) => (
     {/* large */}
     <MediaQuery minWidth={BREAKPOINT + 1}>
       <div
-        className={c(t.flex, t.itemsCenter, t.justifyBetween, t.pv5, t.center)}
-        style={{ maxWidth: '60rem' }}
+        className={c(t.flex, t.itemsCenter, t.justifyBetween, t.pv5, t.ph4, t.center)}
+        style={{ maxWidth: '95%' }}
       >
         <div
-          className={c(t.flex, t.flexColumn, t.pr4)}
-          style={{ minWidth: '20rem' }}
+          className={c(t.flex, t.flexColumn)}
+          style={{ minWidth: '20rem', maxWidth: '60%' }}
         >
-          <div className={c(FontClassNames.superLarge)}>Platform for AI</div>
+          <div className={c(FontClassNames.superLarge)}>
+            人工智能资源调度管理平台
+          </div>
           <div className={c(FontClassNames.mediumPlus, t.lhCopy, t.mv4)}>
-            Platform for AI is an open source platform that provides complete AI
-            model training and resource management capabilities, it is easy to
-            extend and supports on-premise, cloud and hybrid environments in
-            various scale.
+            融合微软算力调度项目OpenPAI,突破新型GPU调度、混合云架构、容器和虚机混合编排蓝图部署，适用于人工智能应用的新型API安全网关等场景落地关键技术，
+            开发了人工智能资源调度平台，
+            <br />
+            支持Tensorflow、PyTorch、MXNet、Keras等多种深度学习计算框架，适配智慧金融、智慧物流、智慧医疗等各种人工智能场景，
+            具备为数据处理标记、模型开发、模型训练优化和部署全程保驾护航的能力。
           </div>
           <PrimaryButton
             styles={{ root: { maxWidth: '6rem' } }}
-            text='Sign in'
+            text='登录'
             onClick={showLoginModal}
           />
         </div>

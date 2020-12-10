@@ -44,14 +44,14 @@ export const Topbar = React.memo(
       <Stack horizontal horizontalAlign='space-between' padding='0 m'>
         <Stack horizontal gap='m' verticalAlign='baseline'>
           <Text variant='xLarge' styles={{ root: { fontWeight: 'semibold' } }}>
-            Job submission
+            提交任务
           </Text>
           <Link
             target='_blank'
-            href='https://openpai.readthedocs.io/en/latest/manual/cluster-user/quick-start.html'
+            href='https://openpai.readthedocs.io/zh_CN/latest/manual/cluster-user/quick-start.html'
             style={{ fontWeight: FontWeights.semibold }}
           >
-            {'Learn more >'}
+            {'学习更多 >'}
           </Link>
         </Stack>
         <Stack horizontal gap='s1'>

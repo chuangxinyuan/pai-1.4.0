@@ -38,15 +38,14 @@ export const ToolComponent = React.memo(
     return (
       config.launcherType === 'k8s' && (
         <SidebarCard
-          title='Tools'
+          title='工具'
           tooltip={PROTOCOL_TOOLTIPS.tools}
           selected={selected}
           onSelect={onSelect}
         >
           <Stack gap='m'>
             <Hint>
-              Tools section is used to configure the tools that are useful for
-              jobs.
+              用于配置对任务有用的工具。
             </Hint>
             <TensorBoard extras={extras} onChange={onExtrasChange} />
             <JobSSH extras={extras} onExtrasChange={onExtrasChange} />

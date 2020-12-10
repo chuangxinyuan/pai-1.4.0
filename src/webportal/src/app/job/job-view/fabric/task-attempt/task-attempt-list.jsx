@@ -55,7 +55,7 @@ const IPTooltipContent = ({ ip }) => {
   return (
     <div>
       <Stack horizontal verticalAlign='center'>
-        <div>{`Container IP: ${ip}`}</div>
+        <div>{`容器IP: ${ip}`}</div>
         <div>
           <CopyButton value={ip} />
         </div>
@@ -159,7 +159,7 @@ export default class TaskAttemptList extends React.Component {
               monacoProps: { value: text },
               monacoFooterButton: (
                 <PrimaryButton
-                  text='View Full Log'
+                  text='查看所有log'
                   target='_blank'
                   styles={{
                     rootFocused: [ColorClassNames.white],
@@ -236,24 +236,24 @@ export default class TaskAttemptList extends React.Component {
     getContainerLogList(logListUrl)
       .then(({ fullLogUrls, tailLogUrls }) => {
         if (config.logType === 'log-manager') {
-          logHint = 'Last 16384 bytes';
+          logHint = '最新16KB';
         }
         switch (logType) {
           case 'stdout':
-            title = `Standard Output (${logHint})`;
+            title = `标准输出 (${logHint})`;
             break;
           case 'stderr':
-            title = `Standard Error (${logHint})`;
+            title = `标准错误 (${logHint})`;
             break;
           case 'all':
-            title = `User logs (${logHint}. Notice: The logs may out of order when merging stdout & stderr streams)`;
+            title = `用户日志 (${logHint}. 注意: 合并输出和错误时，日志可能无序排列)`;
             break;
           default:
-            throw new Error(`Unsupported log type`);
+            throw new Error(`日志类型不支持`);
         }
         this.setState(
           {
-            monacoProps: { value: 'Loading...' },
+            monacoProps: { value: '加载中...' },
             monacoTitle: title,
             fullLogUrls: this.convertObjectFormat(fullLogUrls),
             tailLogUrls: this.convertObjectFormat(tailLogUrls),
@@ -276,15 +276,15 @@ export default class TaskAttemptList extends React.Component {
     if (config.launcherType !== 'k8s') {
       if (!containerSshInfo) {
         const res = [];
-        res.push('This job does not contain SSH info.');
+        res.push('这个任务不包含ssh信息.');
         res.push(
-          'Please note that if your docker image does not have openssh-server and curl packages, SSH will not be enabled.\n',
+          '请注意，如果您的docker镜像没有openssh服务器和curl包，SSH将不会被启用.\n',
         );
         res.push(
-          'Solution 1: Use one of the recommended docker images on the submission page.',
+          '解决方案1：使用提交页面上推荐的docker镜像.',
         );
         res.push(
-          'Solution 2: Use your own image, but enable SSH for it. Please follow the instructions on https://aka.ms/AA5u4sq to do such work.',
+          '解决方案2：使用自己的镜像，但为其启用SSH。请按照上的说明操作https://aka.ms/AA5u4sq做这样的工作.',
         );
         this.setState({
           monacoProps: { value: res.join('\n') },
@@ -292,14 +292,14 @@ export default class TaskAttemptList extends React.Component {
         });
       } else {
         const res = [];
-        res.push('# Step 1. Open a Bash shell terminal.');
-        res.push('# Step 2: Download the private key:');
+        res.push('# 步骤 1. 打开bashshell终端.');
+        res.push('# 步骤 2: 下载私钥:');
         res.push(
           `wget '${sshInfo.keyPair.privateKeyDirectDownloadLink}' -O ${sshInfo.keyPair.privateKeyFileName}`,
         );
-        res.push('# Step 3: Set correct permission for the key file:');
+        res.push('# 步骤 3: 为密钥文件设置正确的权限:');
         res.push(`chmod 400 ${sshInfo.keyPair.privateKeyFileName}`);
-        res.push('# Step 4: Connect to the container:');
+        res.push('# 步骤 4: 连接到容器:');
         res.push(
           `ssh -i ${sshInfo.keyPair.privateKeyFileName} -p ${containerSshInfo.sshPort} root@${containerSshInfo.sshIp}`,
         );
@@ -339,11 +339,11 @@ export default class TaskAttemptList extends React.Component {
       }
       if (hasUserSsh) {
         res.push(
-          'You can connect to this container by one of the following commands if SSH is set up properly: \n',
+          '如果SSH设置正确，可以通过以下命令之一连接到该容器: \n',
         );
-        res.push(`1. Use your default SSH private key:\n`);
+        res.push(`1. 使用默认的SSH私钥:\n`);
         res.push(`ssh -p ${containerPorts.ssh} root@${containerIp}\n`);
-        res.push(`2. Use a pre-downloaded SSH private key:\n`);
+        res.push(`2. 使用预下载的SSH私钥:\n`);
         res.push(
           `On Windows:\nssh -p ${containerPorts.ssh} -i <your-private-key-file-path> root@${containerIp}\n`,
         );
@@ -351,12 +351,12 @@ export default class TaskAttemptList extends React.Component {
           `On Unix-like System:\nchmod 400 <your-private-key-file-path> && ssh -p ${containerPorts.ssh} -i <your-private-key-file-path> root@${containerIp}\n\n`,
         );
         res.push(
-          `If you are using a different username in your docker, please change "root" to your pre-defined username.`,
+          `如果您在docker中使用不同的用户名，请将“root”更改为您的预定义用户名.`,
         );
       } else {
-        res.push('This job does not contain SSH info.');
+        res.push('此任务不包含SSH信息.');
         res.push(
-          'If you want to use SSH, please enable it in the "Tools -> SSH" Section on the Job Submission Page.',
+          '如果要使用SSH，请在作业提交页面的“工具->SSH”部分启用它。',
         );
       }
       this.setState({
@@ -431,7 +431,7 @@ export default class TaskAttemptList extends React.Component {
           minWidth='500px'
         >
           <Stack gap='m'>
-            <Text variant='xLarge'>All Logs:</Text>
+            <Text variant='xLarge'>所有日志:</Text>
             <LogDialogContent
               urlLists={!isNil(fullLogUrls) ? fullLogUrls.locations : []}
             />
@@ -453,7 +453,7 @@ export default class TaskAttemptList extends React.Component {
     const defaultColumns = [
       {
         key: 'taskAttemptIndex',
-        name: 'Task Attempt Index',
+        name: 'Task重试索引',
         minWidth: 120,
         headerClassName: FontClassNames.medium,
         isResizable: true,
@@ -465,7 +465,7 @@ export default class TaskAttemptList extends React.Component {
       },
       {
         key: 'taskAttemtState',
-        name: 'Task Attempt State',
+        name: 'Task重试状态',
         minWidth: 120,
         headerClassName: FontClassNames.medium,
         isResizable: true,
@@ -489,7 +489,7 @@ export default class TaskAttemptList extends React.Component {
       },
       {
         key: 'ports',
-        name: 'Ports',
+        name: '端口',
         className: FontClassNames.mediumPlus,
         headerClassName: FontClassNames.medium,
         minWidth: 150,
@@ -515,7 +515,7 @@ export default class TaskAttemptList extends React.Component {
       },
       {
         key: 'info',
-        name: 'Info & Logs',
+        name: '消息日志',
         className: localCss.pa0I,
         headerClassName: FontClassNames.medium,
         minWidth: 300,
@@ -532,7 +532,7 @@ export default class TaskAttemptList extends React.Component {
                   rootDisabled: { backgroundColor: 'transparent' },
                 }}
                 iconProps={{ iconName: 'TextDocument' }}
-                text='Stdout'
+                text='输出'
                 onClick={() =>
                   this.showContainerTailLog(
                     `${config.restServerUri}${item.containerLog}`,
@@ -548,7 +548,7 @@ export default class TaskAttemptList extends React.Component {
                   rootDisabled: { backgroundColor: 'transparent' },
                 }}
                 iconProps={{ iconName: 'Error' }}
-                text='Stderr'
+                text='错误'
                 onClick={() =>
                   this.showContainerTailLog(
                     `${config.restServerUri}${item.containerLog}`,
@@ -597,7 +597,7 @@ export default class TaskAttemptList extends React.Component {
       },
       {
         key: 'exitType',
-        name: 'Exit Type',
+        name: '退出类型',
         headerClassName: FontClassNames.medium,
         minWidth: 150,
         maxWidth: 200,
@@ -615,7 +615,7 @@ export default class TaskAttemptList extends React.Component {
       },
       {
         key: 'taskAttemptExitCode',
-        name: 'Exit Code',
+        name: '退出码',
         minWidth: 230,
         headerClassName: FontClassNames.medium,
         isResizable: true,
@@ -633,7 +633,7 @@ export default class TaskAttemptList extends React.Component {
       },
       {
         key: 'runningStartTime',
-        name: 'Running Start Time',
+        name: '运行启动时间',
         headerClassName: FontClassNames.medium,
         minWidth: 180,
         maxWidth: 200,
@@ -652,7 +652,7 @@ export default class TaskAttemptList extends React.Component {
       },
       {
         key: 'taskAttemptDuration',
-        name: 'Running Duration',
+        name: '运行持续时间',
         minWidth: 150,
         headerClassName: FontClassNames.medium,
         isResizable: true,
@@ -671,7 +671,7 @@ export default class TaskAttemptList extends React.Component {
       },
       {
         key: 'nodeName',
-        name: 'Node Name',
+        name: '节点名称',
         headerClassName: FontClassNames.medium,
         minWidth: 100,
         isResizable: true,
@@ -685,7 +685,7 @@ export default class TaskAttemptList extends React.Component {
       },
       {
         key: 'exitDiagonostic',
-        name: 'Exit Diagnostics',
+        name: '退出诊断',
         headerClassName: FontClassNames.medium,
         minWidth: 200,
         isResizable: true,
@@ -701,7 +701,7 @@ export default class TaskAttemptList extends React.Component {
                 isNil(item.containerExitDiagnostics) &&
                 isNil(item.containerExitSpec)
               }
-              text='Show Exit Diagnostics'
+              text='查看退出诊断'
               onClick={() => {
                 const result = [];
                 // exit spec
@@ -739,7 +739,7 @@ export default class TaskAttemptList extends React.Component {
                       readOnly: true,
                     },
                   },
-                  monacoTitle: `Task Exit Diagonostics`,
+                  monacoTitle: `Task退出诊断`,
                 });
               }}
             />
@@ -748,7 +748,7 @@ export default class TaskAttemptList extends React.Component {
       },
       {
         key: 'containerId',
-        name: 'Container ID',
+        name: '容器 ID',
         headerClassName: FontClassNames.medium,
         minWidth: 300,
         isResizable: true,

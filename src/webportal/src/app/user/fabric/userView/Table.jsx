@@ -93,7 +93,7 @@ export default function Table() {
   const usernameColumn = applySortProps({
     key: 'username',
     minWidth: 200,
-    name: 'User Name',
+    name: '用户名称',
     fieldName: 'username',
     className: FontClassNames.mediumPlus,
     headerClassName: FontClassNames.medium,
@@ -104,13 +104,13 @@ export default function Table() {
   const adminColumn = applySortProps({
     key: 'admin',
     minWidth: 60,
-    name: 'Admin',
+    name: '管理员',
     className: FontClassNames.mediumPlus,
     headerClassName: FontClassNames.medium,
     isResizable: true,
     isFiltered: filter.admins.size > 0,
     onRender(user) {
-      return user.admin ? 'Yes' : 'No';
+      return user.admin ? '是' : '否';
     },
   });
 
@@ -118,7 +118,7 @@ export default function Table() {
     key: 'email',
     minWidth: 200,
     fieldName: 'email',
-    name: 'Email',
+    name: '邮箱',
     className: FontClassNames.mediumPlus,
     headerClassName: FontClassNames.medium,
     isResizable: true,
@@ -127,7 +127,7 @@ export default function Table() {
   const virtualClusterColumn = applySortProps({
     key: 'virtualCluster',
     minWidth: 250,
-    name: 'Virtual Cluster',
+    name: '虚拟集群',
     className: FontClassNames.mediumPlus,
     headerClassName: FontClassNames.medium,
     isResizable: true,
@@ -144,7 +144,7 @@ export default function Table() {
   const actionsColumn = {
     key: 'actions',
     minWidth: 100,
-    name: 'Actions',
+    name: '操作',
     headerClassName: FontClassNames.medium,
     columnActionsMode: ColumnActionsMode.disabled,
     className: mergeStyles({
@@ -163,7 +163,7 @@ export default function Table() {
 
       const disabled = getSelectedUsers().length > 1;
       const disabledTip = disabled
-        ? 'Multi-user simultaneous editing is not supported'
+        ? '不支持多用户同时编辑'
         : '';
 
       return (
@@ -179,7 +179,7 @@ export default function Table() {
                 rootCheckedDisabled: { backgroundColor: '#eeeeee' },
               }}
             >
-              Edit
+              编辑
             </DefaultButton>
           </TooltipHost>
         </div>

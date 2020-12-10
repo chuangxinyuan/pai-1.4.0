@@ -57,7 +57,7 @@ const AbnormalJobList = ({ jobs }) => {
     {
       key: 'name',
       minWidth: 150,
-      name: 'Name',
+      name: '任务名称',
       fieldName: 'name',
       className: FontClassNames.mediumPlus,
       isResizable: true,
@@ -73,7 +73,7 @@ const AbnormalJobList = ({ jobs }) => {
     {
       key: 'gpuCount',
       minWidth: 150,
-      name: 'GPUs',
+      name: 'GPU数量',
       fieldName: 'totalGpuNumber',
       className: FontClassNames.mediumPlus,
       isResizable: true,
@@ -91,7 +91,7 @@ const AbnormalJobList = ({ jobs }) => {
     {
       key: 'modified',
       minWidth: 150,
-      name: 'Date Modified',
+      name: '修改日期',
       className: FontClassNames.mediumPlus,
       isResizable: true,
       onRender(job) {
@@ -101,7 +101,7 @@ const AbnormalJobList = ({ jobs }) => {
     {
       key: 'user',
       minWidth: 60,
-      name: 'User',
+      name: '用户',
       fieldName: 'username',
       className: FontClassNames.mediumPlus,
       isResizable: true,
@@ -109,7 +109,7 @@ const AbnormalJobList = ({ jobs }) => {
     {
       key: 'duration',
       minWidth: 120,
-      name: 'Duration',
+      name: '持续时间',
       className: FontClassNames.mediumPlus,
       isResizable: true,
       onRender(job) {
@@ -126,7 +126,7 @@ const AbnormalJobList = ({ jobs }) => {
     {
       key: 'virtualCluster',
       minWidth: 100,
-      name: 'Virtual Cluster',
+      name: '虚拟集群',
       fieldName: 'virtualCluster',
       className: FontClassNames.mediumPlus,
       isResizable: true,
@@ -134,7 +134,7 @@ const AbnormalJobList = ({ jobs }) => {
     {
       key: 'status',
       minWidth: 100,
-      name: 'Status',
+      name: '任务状态',
       isResizable: true,
       onRender(job) {
         return <StatusBadge status={getHumanizedJobStateString(job)} />;
@@ -143,7 +143,7 @@ const AbnormalJobList = ({ jobs }) => {
     {
       key: 'action',
       minWidth: 100,
-      name: 'Action',
+      name: '操作',
       className: zeroPaddingClass,
       isResizable: true,
       onRender(job) {

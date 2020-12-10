@@ -95,7 +95,7 @@ const MonacoPanel = ({
             </StackItem>
             <StackItem>
               <DefaultButton
-                text='Close'
+                text='取消'
                 styles={{
                   root: [ColorClassNames.neutralDarkBackground],
                   rootHovered: [ColorClassNames.blackBackground],

@@ -48,13 +48,13 @@ export const NotificationButton = () => {
       try {
         const result = await fetch(alertsUrl);
         if (!result.ok) {
-          throw Error('Failed to get alert infos');
+          throw Error('获取警报信息失败');
         }
         const data = await result.json().catch(() => {
-          throw new Error('Get alerts json failed');
+          throw new Error('获取警报json失败');
         });
         if (data.status !== 'success') {
-          throw new Error('Failed to get alerts data');
+          throw new Error('无法获取警报数据');
         }
         if (!canceled) {
           setAlertItems(data.data);
@@ -91,7 +91,7 @@ export const NotificationButton = () => {
         }}
       >
         <StackItem grow>
-          <span>Alert</span>
+          <span>报警</span>
         </StackItem>
         <StackItem>{defaultRender(props)}</StackItem>
       </Stack>
@@ -138,7 +138,7 @@ export const NotificationButton = () => {
           onRenderCell={item => {
             return (
               <div className={classNames.itemCell} data-is-focusable={true}>
-                {'Issue time: ' + new Date(item.startsAt).toLocaleString()}
+                {'发生时间: ' + new Date(item.startsAt).toLocaleString()}
                 <br />
                 {item.labels.severity + ':' + item.annotations.summary}
               </div>

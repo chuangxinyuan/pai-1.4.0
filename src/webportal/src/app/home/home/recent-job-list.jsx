@@ -51,13 +51,13 @@ const DummyContent = () => {
         style={{ maxHeight: '100%', padding: spacing.m }}
       >
         <div className={c(t.tc, FontClassNames.large)}>
-          No recent resources to display
+          没有最新任务可显示
         </div>
         <div
           className={c(t.tc, FontClassNames.large)}
           style={{ marginTop: spacing.l2 }}
         >
-          {`As you visit jobs, they'll be listed in Recently used jobs for quick and easy access.`}
+          {`当您访问任务时，这些任务将列在最近使用的任务中，以便快速方便地访问.`}
         </div>
         <Stack
           styles={{ root: [{ marginTop: spacing.l3 }] }}
@@ -76,7 +76,7 @@ const DummyContent = () => {
             <DefaultButton
               text='Tutorial'
               styles={{ root: [{ width: 120 }] }}
-              href='https://openpai.readthedocs.io/en/latest/manual/cluster-user/quick-start.html'
+              href='https://openpai.readthedocs.io/zh_CN/latest/manual/cluster-user/quick-start.html'
               target='_blank'
             />
           </Stack.Item>
@@ -90,7 +90,7 @@ const jobListColumns = [
   {
     key: 'name',
     minWidth: 200,
-    name: 'Name',
+    name: '任务名称',
     fieldName: 'name',
     className: FontClassNames.mediumPlus,
     isResizable: true,
@@ -105,7 +105,7 @@ const jobListColumns = [
   {
     key: 'modified',
     minWidth: 150,
-    name: 'Date Modified',
+    name: '修改日期',
     className: FontClassNames.mediumPlus,
     isResizable: true,
     onRender(job) {
@@ -115,7 +115,7 @@ const jobListColumns = [
   {
     key: 'duration',
     minWidth: 120,
-    name: 'Duration',
+    name: '持续时间',
     className: FontClassNames.mediumPlus,
     isResizable: true,
     onRender(job) {
@@ -125,7 +125,7 @@ const jobListColumns = [
   {
     key: 'virtualCluster',
     minWidth: 100,
-    name: 'Virtual Cluster',
+    name: '虚拟集群',
     fieldName: 'virtualCluster',
     className: FontClassNames.mediumPlus,
     isResizable: true,
@@ -133,7 +133,7 @@ const jobListColumns = [
   {
     key: 'status',
     minWidth: 100,
-    name: 'Status',
+    name: '任务状态',
     isResizable: true,
     onRender(job) {
       return <StatusBadge status={getHumanizedJobStateString(job)} />;

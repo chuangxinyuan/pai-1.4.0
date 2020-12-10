@@ -40,7 +40,7 @@ export const Loading = () => (
   </div>
 );
 
-export const SpinnerLoading = ({ label = 'Loading...' }) => {
+export const SpinnerLoading = ({ label = '加载中...' }) => {
   return (
     <div className={c(t.flex, t.itemsCenter, t.justifyCenter, t.h100)}>
       <div className={c(t.flex, t.itemsCenter)}>
@@ -55,7 +55,7 @@ SpinnerLoading.propTypes = {
   label: PropTypes.string,
 };
 
-export const MaskSpinnerLoading = ({ label = 'Loading...' }) => (
+export const MaskSpinnerLoading = ({ label = '加载中...' }) => (
   <div
     className={c(
       t.fixed,

@@ -31,10 +31,10 @@ export const VirtualCluster = React.memo(props => {
 
   const vcIndex = options.findIndex(value => value.text === virtualCluster);
   return (
-    <BasicSection sectionLabel={'Virtual cluster'}>
+    <BasicSection sectionLabel={'虚拟集群'}>
       <FormShortSection>
         <Dropdown
-          placeholder='Select an option'
+          placeholder='请选择'
           options={options}
           onChange={_onChange}
           selectedKey={vcIndex === -1 ? null : `vc_${vcIndex}`}

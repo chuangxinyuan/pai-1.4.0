@@ -77,7 +77,7 @@ export const TeamStorage = ({
   const columns = [
     {
       key: 'name',
-      name: 'Name',
+      name: '名称',
       headerClassName: FontClassNames.medium,
       minWidth: 160,
       onRender: (item, idx) => {
@@ -112,7 +112,7 @@ export const TeamStorage = ({
     },
     {
       key: 'containerPath',
-      name: 'Path',
+      name: '路径',
       headerClassName: FontClassNames.medium,
       minWidth: 120,
       onRender: item => {
@@ -125,7 +125,7 @@ export const TeamStorage = ({
     },
     {
       key: 'permission',
-      name: 'Permission',
+      name: '权限',
       headerClassName: FontClassNames.medium,
       minWidth: 50,
       onRender: item => {
@@ -138,7 +138,7 @@ export const TeamStorage = ({
     },
     {
       key: 'detail',
-      name: 'Detail',
+      name: '详情',
       headerClassName: FontClassNames.medium,
       minWidth: 70,
       onRender: item => {
@@ -151,7 +151,7 @@ export const TeamStorage = ({
 
         return (
           <div>
-            <DefaultButton text='Detail' onClick={onClick} />
+            <DefaultButton text='详情' onClick={onClick} />
           </div>
         );
       },
@@ -167,7 +167,7 @@ export const TeamStorage = ({
             paddingBottom: spacing.m,
           }}
         >
-          Team Share Storage
+          Team共享存储
         </Text>
         <TooltipIcon content={PROTOCOL_TOOLTIPS.teamStorage} />
       </Stack>

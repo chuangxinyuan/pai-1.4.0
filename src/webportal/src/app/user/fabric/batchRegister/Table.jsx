@@ -47,7 +47,7 @@ export default function Table() {
     key: 'username',
     minWidth: 120,
     maxWidth: 600,
-    name: 'User Name',
+    name: '用户名',
     className: FontClassNames.mediumPlus,
     headerClassName: FontClassNames.medium,
     isResizable: true,
@@ -59,7 +59,7 @@ export default function Table() {
           return errorMessage;
         }
         if (allUsers.indexOf(value) !== -1) {
-          return 'User name already exists';
+          return '用户名已存在';
         }
         return '';
       };
@@ -84,7 +84,7 @@ export default function Table() {
     key: 'password',
     minWidth: 150,
     maxWidth: 200,
-    name: 'Password',
+    name: '密码',
     className: FontClassNames.mediumPlus,
     headerClassName: FontClassNames.medium,
     isResizable: true,
@@ -115,7 +115,7 @@ export default function Table() {
     key: 'email',
     minWidth: 150,
     maxWidth: 300,
-    name: 'Email',
+    name: '邮箱',
     className: FontClassNames.mediumPlus,
     headerClassName: FontClassNames.medium,
     isResizable: true,
@@ -149,7 +149,7 @@ export default function Table() {
     key: 'admin',
     minWidth: 80,
     maxWidth: 200,
-    name: 'Admin',
+    name: '管理员',
     className: FontClassNames.mediumPlus,
     headerClassName: FontClassNames.medium,
     isResizable: true,
@@ -158,8 +158,8 @@ export default function Table() {
        * @type {import('office-ui-fabric-react').IDropdownOption[]}
        */
       const options = [
-        { key: 'true', text: 'Yes' },
-        { key: 'false', text: 'No' },
+        { key: 'true', text: '是' },
+        { key: 'false', text: '否' },
       ];
       const { admin } = userInfo;
       const finished = isFinished(userInfo);
@@ -189,7 +189,7 @@ export default function Table() {
     key: 'virtual cluster',
     minWidth: 150,
     maxWidth: 300,
-    name: 'Virtual Cluster',
+    name: '虚拟集群',
     className: FontClassNames.mediumPlus,
     headerClassName: FontClassNames.medium,
     isResizable: true,
@@ -241,7 +241,7 @@ export default function Table() {
     key: 'status',
     minWidth: 100,
     maxWidth: 100,
-    name: 'Status',
+    name: '状态',
     className: FontClassNames.mediumPlus,
     headerClassName: FontClassNames.medium,
     isResizable: true,
@@ -273,7 +273,7 @@ export default function Table() {
   const actionColumn = {
     key: 'action',
     minWidth: 100,
-    name: 'Action',
+    name: '操作',
     headerClassName: FontClassNames.medium,
     onRender(userInfo) {
       /**

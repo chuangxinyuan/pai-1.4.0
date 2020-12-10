@@ -74,12 +74,12 @@ export const TensorBoard = props => {
         <TooltipIcon content={PROTOCOL_TOOLTIPS.tensorboard} />
       </Stack>
       <Hint>
-        By default, tensorBoard will read logs under{' '}
-        <code>{TENSORBOARD_LOG_PATH}</code> and use random port in{' '}
+        默认情况下，tensorBoard将读取
+        <code>{TENSORBOARD_LOG_PATH}</code> 下的日志，并使用随机端口{' '}
         <code>[10000, 15000)</code>.
       </Hint>
       <Toggle
-        label='Enable TensorBoard'
+        label='使用TensorBoard'
         inlineLabel={true}
         checked={
           !isNil(

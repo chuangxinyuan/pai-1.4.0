@@ -85,34 +85,32 @@ export const PAI_ENV_VAR = [
 ];
 export const PROTOCOL_TOOLTIPS = {
   taskRoleContainerSize:
-    'https://openpai.readthedocs.io/en/latest/manual/cluster-user/quick-start.html',
+    'https://openpai.readthedocs.io/zh_CN/latest/manual/cluster-user/quick-start.html',
   hivedSkuType:
-    'https://openpai.readthedocs.io/en/latest/manual/cluster-user/quick-start.html',
+    'https://openpai.readthedocs.io/zh_CN/latest/manual/cluster-user/quick-start.html',
   taskRole:
-    'https://openpai.readthedocs.io/en/latest/manual/cluster-user/how-to-run-distributed-job.html#taskrole-and-instance',
+    'https://openpai.readthedocs.io/zh_CN/latest/manual/cluster-user/how-to-run-distributed-job.html#taskrole-and-instance',
   parameters:
-    'https://openpai.readthedocs.io/en/latest/manual/cluster-user/how-to-use-advanced-job-settings.html#parameters-and-secrets',
-  secrets: `https://openpai.readthedocs.io/en/latest/manual/cluster-user/how-to-use-advanced-job-settings.html#parameters-and-secrets`,
+    'https://openpai.readthedocs.io/zh_CN/latest/manual/cluster-user/how-to-use-advanced-job-settings.html#parameters-and-secrets',
+  secrets: `https://openpai.readthedocs.io/zh_CN/latest/manual/cluster-user/how-to-use-advanced-job-settings.html#parameters-and-secrets`,
   data:
-    'https://openpai.readthedocs.io/en/latest/manual/cluster-user/how-to-manage-data.html',
+    'https://openpai.readthedocs.io/zh_CN/latest/manual/cluster-user/how-to-manage-data.html',
   tools:
-    'https://openpai.readthedocs.io/en/latest/manual/cluster-user/how-to-debug-jobs.html#how-to-debug-jobs',
+    'https://openpai.readthedocs.io/zh_CN/latest/manual/cluster-user/how-to-debug-jobs.html#how-to-debug-jobs',
   dockerImage:
-    'https://openpai.readthedocs.io/en/latest/manual/cluster-user/docker-images-and-job-examples.html',
+    'https://openpai.readthedocs.io/zh_CN/latest/manual/cluster-user/docker-images-and-job-examples.html',
   teamStorage:
-    'https://openpai.readthedocs.io/en/latest/manual/cluster-user/how-to-manage-data.html#use-storage-in-jobs',
+    'https://openpai.readthedocs.io/zh_CN/latest/manual/cluster-user/how-to-manage-data.html#use-storage-in-jobs',
   tensorboard:
-    'https://openpai.readthedocs.io/en/latest/manual/cluster-user/how-to-debug-jobs.html#how-to-use-tensorboard-plugin',
+    'https://openpai.readthedocs.io/zh_CN/latest/manual/cluster-user/how-to-debug-jobs.html#how-to-use-tensorboard-plugin',
   ssh:
-    'https://openpai.readthedocs.io/en/latest/manual/cluster-user/how-to-debug-jobs.html#how-to-use-ssh',
+    'https://openpai.readthedocs.io/zh_CN/latest/manual/cluster-user/how-to-debug-jobs.html#how-to-use-ssh',
   policy:
-    'https://openpai.readthedocs.io/en/latest/manual/cluster-user/how-to-use-advanced-job-settings.html#job-exit-spec-retry-policy-and-completion-policy',
+    'https://openpai.readthedocs.io/zh_CN/latest/manual/cluster-user/how-to-use-advanced-job-settings.html#job-exit-spec-retry-policy-and-completion-policy',
 };
 
-export const COMMAND_PLACEHOLDER = `'You could define your own Parameters, Secrets or Data mount point on the right sidebar.
-
-All lines will be concatenated by "&&". So do not use characters like "#", "\\" in your command'`;
-
+export const COMMAND_PLACEHOLDER = `'您可以在右侧边栏上定义自己的参数、秘密参数或数据装入点。
+所有行将用”&&“连接。因此，不要在命令中使用“#”、“\\”等字符'`;
 export const DOCKER_OPTIONS = [
   {
     key: 'python_3.6-pytorch_1.4.0-gpu',
@@ -177,7 +175,7 @@ export const SSH_KEY_BITS = 1024;
 export const USERSSH_TYPE_OPTIONS = [
   {
     key: 'custom',
-    text: 'Custom',
+    text: '常规',
   },
   // {
   //   key: 'system',

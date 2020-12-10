@@ -78,7 +78,7 @@ export default function BatchVirtualClustersEditor({ isOpen = false, hide }) {
         return;
       }
     }
-    await showMessageBox('Update virtual clusters successfully');
+    await showMessageBox('成功更新虚拟群集');
     setLock(false);
     hide();
     refreshAllUsers();
@@ -123,7 +123,7 @@ export default function BatchVirtualClustersEditor({ isOpen = false, hide }) {
                     <Dropdown
                       multiSelect
                       options={vcsOptions}
-                      placeholder='Select an option'
+                      placeholder='请选择'
                       onChange={handleVCsChanged}
                       style={{ maxWidth: '248px' }}
                     />
@@ -142,12 +142,12 @@ export default function BatchVirtualClustersEditor({ isOpen = false, hide }) {
             <Stack horizontal={true} horizontalAlign='center' gap={spacing.s1}>
               <StackItem>
                 <PrimaryButton type='submit' disabled={lock}>
-                  Save
+                  保存
                 </PrimaryButton>
               </StackItem>
               <StackItem>
                 <DefaultButton disabled={lock} onClick={handleCancel}>
-                  Cancel
+                  取消
                 </DefaultButton>
               </StackItem>
             </Stack>

@@ -124,7 +124,7 @@ export const KeyValueList = ({
     },
     {
       key: 'remove',
-      name: 'Remove',
+      name: '删除',
       minWidth: 50,
       onRender: (item, idx) => (
         <div
@@ -164,7 +164,7 @@ export const KeyValueList = ({
           iconProps={{ iconName: 'Add' }}
           onClick={onAdd}
         >
-          Add
+          添加
         </CommandBarButton>
       </div>
     </Stack>
@@ -194,13 +194,13 @@ export const getItemsWithError = items => {
   const keyCount = countBy(result, x => x.key);
   for (const [idx, item] of result.entries()) {
     if (keyCount[item.key] > 1) {
-      result[idx] = { ...item, keyError: 'Duplicated key' };
+      result[idx] = { ...item, keyError: 'key重复' };
     }
   }
   // empty key
   for (const [idx, item] of result.entries()) {
     if (isEmpty(item.key) && !isEmpty(item.value) && isEmpty(item.keyError)) {
-      result[idx] = { ...item, keyError: 'Empty key' };
+      result[idx] = { ...item, keyError: 'key不能为空' };
     }
   }
 

@@ -117,7 +117,7 @@ const Home = () => {
               {isAdmin ? (
                 <Pivot styles={{ root: { maxHeight: '100%' } }}>
                   <PivotItem
-                    headerText='Abnormal jobs'
+                    headerText='异常任务'
                     onRenderItemLink={(link, defaultRenderer) => {
                       return (
                         <Stack horizontal gap='s1'>
@@ -130,13 +130,13 @@ const Home = () => {
                       jobs={listAbnormalJobs(runningJobs, lowGpuJobInfo)}
                     />
                   </PivotItem>
-                  <PivotItem headerText='My recent jobs'>
+                  <PivotItem headerText='最新任务'>
                     <RecentJobList style={{ minHeight: 0 }} jobs={userJobs} />
                   </PivotItem>
                 </Pivot>
               ) : (
                 <Pivot>
-                  <PivotItem headerText='My recent jobs'>
+                  <PivotItem headerText='最新任务'>
                     <RecentJobList style={{ minHeight: 0 }} jobs={userJobs} />
                   </PivotItem>
                 </Pivot>
@@ -175,23 +175,23 @@ const Home = () => {
                 <Stack horizontal>
                   <TooltipIcon
                     content={
-                      'https://openpai.readthedocs.io/en/latest/manual/cluster-admin/basic-management-operations.html#abnormal-jobs'
+                      'https://openpai.readthedocs.io/zh_CN/latest/manual/cluster-admin/basic-management-operations.html#abnormal-jobs'
                     }
                   />
                   <Pivot>
-                    <PivotItem headerText='Abnormal jobs'>
+                    <PivotItem headerText='异常任务'>
                       <AbnormalJobList
                         jobs={listAbnormalJobs(runningJobs, lowGpuJobInfo)}
                       />
                     </PivotItem>
-                    <PivotItem headerText='My recent jobs'>
+                    <PivotItem headerText='最新任务'>
                       <RecentJobList style={{ minHeight: 0 }} jobs={userJobs} />
                     </PivotItem>
                   </Pivot>
                 </Stack>
               ) : (
                 <Pivot>
-                  <PivotItem headerText='My recent jobs'>
+                  <PivotItem headerText='最新任务'>
                     <RecentJobList style={{ minHeight: 0 }} jobs={userJobs} />
                   </PivotItem>
                 </Pivot>

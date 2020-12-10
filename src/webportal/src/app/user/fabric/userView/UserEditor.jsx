@@ -211,8 +211,8 @@ export default function UserEditor({
 
     await showMessageBox(
       isCreate
-        ? 'Add new user successfully'
-        : 'Update user information successfully',
+        ? '添加新用户成功'
+        : '成功更新用户信息',
     );
     setLock(false);
     hide();
@@ -248,14 +248,14 @@ export default function UserEditor({
       <div className={c(t.pa4)}>
         <form onSubmit={handleSubmit}>
           <div className={c(FontClassNames.mediumPlus)}>
-            {isCreate ? 'Add new user' : 'Edit user'}
+            {isCreate ? '添加新用户' : '编辑用户'}
           </div>
           <div style={{ margin: `${spacing.l1} 0px` }}>
             <table className={c(t.mlAuto, t.mrAuto)}>
               <tbody>
                 <tr>
                   <td className={tdLabelStyle} style={{ minWidth: '140px' }}>
-                    Name
+                    用户名
                   </td>
                   <td className={tdPaddingStyle} style={{ minWidth: '248px' }}>
                     <TextField
@@ -263,36 +263,36 @@ export default function UserEditor({
                       componentRef={usernameRef}
                       disabled={!isCreate}
                       defaultValue={username}
-                      placeholder={isCreate ? 'Enter user name' : ''}
+                      placeholder={isCreate ? '请输入用户名' : ''}
                     />
                   </td>
                 </tr>
                 <tr>
-                  <td className={tdLabelStyle}>Password</td>
+                  <td className={tdLabelStyle}>密码</td>
                   <td className={tdPaddingStyle}>
                     <CustomPassword
                       componentRef={passwordRef}
-                      placeholder={isCreate ? 'Enter password' : '******'}
+                      placeholder={isCreate ? '请输入密码' : '******'}
                       description={
                         !isCreate &&
-                        "User's browser tokens will be revoked if password is changed"
+                        "如果密码更改，用户的浏览器令牌将被吊销"
                       }
                     />
                   </td>
                 </tr>
                 <tr>
-                  <td className={tdLabelStyle}>Email</td>
+                  <td className={tdLabelStyle}>邮箱</td>
                   <td className={tdPaddingStyle}>
                     <TextField
                       id={`EmailInput${Math.random()}`}
                       componentRef={emailRef}
                       defaultValue={email}
-                      placeholder='Enter email'
+                      placeholder='请输入邮箱'
                     />
                   </td>
                 </tr>
                 <tr>
-                  <td className={tdLabelStyle}>Virtual clusters</td>
+                  <td className={tdLabelStyle}>虚拟集群</td>
                   <td className={tdPaddingStyle}>
                     <Dropdown
                       multiSelect
@@ -300,12 +300,12 @@ export default function UserEditor({
                       selectedKeys={vcs}
                       disabled={isAdmin}
                       onChange={handleVCsChanged}
-                      placeholder='Select an option'
+                      placeholder='请选择'
                     />
                   </td>
                 </tr>
                 <tr>
-                  <td className={tdLabelStyle}>Admin user</td>
+                  <td className={tdLabelStyle}>管理员账户</td>
                   <td className={tdPaddingStyle}>
                     <Stack horizontal={true} gap={spacing.m}>
                       <StackItem>
@@ -317,7 +317,7 @@ export default function UserEditor({
                       </StackItem>
                       <StackItem>
                         <span className={c(FontClassNames.xSmall, t.i)}>
-                          Admin user default own all virtual clusters
+                          管理员用户默认拥有所有虚拟群集
                         </span>
                       </StackItem>
                     </Stack>
@@ -336,12 +336,12 @@ export default function UserEditor({
             <Stack horizontal={true} horizontalAlign='center' gap={spacing.s1}>
               <StackItem>
                 <PrimaryButton type='submit' disabled={lock} autoFocus>
-                  {isCreate ? 'Add' : 'Save'}
+                  {isCreate ? '添加' : '保存'}
                 </PrimaryButton>
               </StackItem>
               <StackItem>
                 <DefaultButton disabled={lock} onClick={handleCancel}>
-                  Cancel
+                  取消
                 </DefaultButton>
               </StackItem>
             </Stack>

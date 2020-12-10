@@ -122,7 +122,7 @@ const JobWizard = ({ setYamlText, history }) => {
               position: 'absolute',
             }}
           >
-            Select your job type
+            请选择任务类型
           </div>
           <Stack
             horizontal
@@ -151,7 +151,7 @@ const JobWizard = ({ setYamlText, history }) => {
                   fontWeight: FontWeights.semibold,
                 }}
               >
-                Import Config
+                导入配置
               </div>
             </Stack>
             <Stack horizontalAlign='center' gap={50}>
@@ -168,7 +168,7 @@ const JobWizard = ({ setYamlText, history }) => {
                   fontWeight: FontWeights.semibold,
                 }}
               >
-                Single Job
+                单任务
               </div>
             </Stack>
             <Stack horizontalAlign='center' gap={50}>
@@ -185,7 +185,7 @@ const JobWizard = ({ setYamlText, history }) => {
                   fontWeight: FontWeights.semibold,
                 }}
               >
-                Distributed Job
+                分布式任务
               </div>
             </Stack>
           </Stack>

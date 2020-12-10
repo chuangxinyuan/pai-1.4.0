@@ -45,7 +45,7 @@ export default function Paginator() {
 
   farItems.push({
     key: 'itemsPerPage',
-    text: `${itemsPerPage} items per page`,
+    text: `${itemsPerPage} /页`,
     buttonStyles,
     menuIconProps: { iconName: 'ChevronUp' },
     subMenuProps: {
@@ -59,7 +59,7 @@ export default function Paginator() {
 
   farItems.push({
     key: 'range',
-    text: `${start}-${end} of ${length}`,
+    text: `${start}-${end} / ${length}`,
     buttonStyles,
     checked: true,
     disabled: true,

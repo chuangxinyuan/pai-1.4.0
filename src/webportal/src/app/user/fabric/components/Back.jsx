@@ -24,7 +24,7 @@ const BackButton = () => (
       iconProps={{ iconName: 'revToggleKey' }}
       href='/user-view.html'
     >
-      Back to User Management
+      返回用户列表
     </ActionButton>
   </div>
 );

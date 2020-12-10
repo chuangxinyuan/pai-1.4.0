@@ -226,7 +226,7 @@ export class TabForm extends React.Component {
                 <ActionButton
                   styles={{ root: { padding: `0 ${spacing.l1}` } }}
                   iconProps={{ iconName: 'CircleAddition' }}
-                  text='Add new task role'
+                  text='添加task role'
                   onClick={this._onItemAdd.bind(this)}
                 />
               </Stack.Item>

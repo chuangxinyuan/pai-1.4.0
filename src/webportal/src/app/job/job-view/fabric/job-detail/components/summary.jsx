@@ -127,12 +127,12 @@ export default class Summary extends React.Component {
   showJobConfig() {
     const { rawJobConfig } = this.context;
     if (isJobV2(rawJobConfig)) {
-      this.props.showEditor('Job Config', {
+      this.props.showEditor('任务配置', {
         language: 'yaml',
         value: yaml.safeDump(rawJobConfig),
       });
     } else {
-      this.props.showEditor('Job Config', {
+      this.props.showEditor('任务配置', {
         language: 'json',
         value: JSON.stringify(rawJobConfig, null, 2),
       });
@@ -329,10 +329,10 @@ export default class Summary extends React.Component {
                 selectedKey={autoReloadInterval}
                 onChange={this.onChangeInterval}
                 options={[
-                  { key: 0, text: 'Disable Auto Refresh' },
-                  { key: 10000, text: 'Refresh every 10s' },
-                  { key: 30000, text: 'Refresh every 30s' },
-                  { key: 60000, text: 'Refresh every 60s' },
+                  { key: 0, text: '禁用自动刷新' },
+                  { key: 10000, text: '每10s刷新一次' },
+                  { key: 30000, text: '每30s刷新一次' },
+                  { key: 60000, text: '每60s刷新一次' },
                 ]}
               />
               <ActionButton
@@ -342,14 +342,14 @@ export default class Summary extends React.Component {
                 disabled={reloading}
                 onClick={onReload}
               >
-                Refresh
+                刷新
               </ActionButton>
             </div>
           </div>
           {/* summary-row-2 */}
           <div className={c(t.mt4, t.flex, t.itemsStart)}>
             <div>
-              <div className={c(t.gray, FontClassNames.medium)}>Job State</div>
+              <div className={c(t.gray, FontClassNames.medium)}>任务状态</div>
               <div className={c(t.mt3)}>
                 <StatusBadge
                   status={getHumanizedJobStateString(jobInfo.jobStatus)}
@@ -358,7 +358,7 @@ export default class Summary extends React.Component {
             </div>
             <div className={t.ml4}>
               <div className={c(t.gray, FontClassNames.medium)}>
-                Submission Time
+                提交时间
               </div>
               <div className={c(t.mt3, FontClassNames.mediumPlus)}>
                 {printDateTime(
@@ -367,27 +367,27 @@ export default class Summary extends React.Component {
               </div>
             </div>
             <div className={t.ml4}>
-              <div className={c(t.gray, FontClassNames.medium)}>User</div>
+              <div className={c(t.gray, FontClassNames.medium)}>用户</div>
               <div className={c(t.mt3, FontClassNames.mediumPlus)}>
                 {jobInfo.jobStatus.username}
               </div>
             </div>
             <div className={t.ml4}>
               <div className={c(t.gray, FontClassNames.medium)}>
-                Virtual Cluster
+                虚拟集群
               </div>
               <div className={c(t.mt3, FontClassNames.mediumPlus)}>
                 {jobInfo.jobStatus.virtualCluster}
               </div>
             </div>
             <div className={t.ml4}>
-              <div className={c(t.gray, FontClassNames.medium)}>Duration</div>
+              <div className={c(t.gray, FontClassNames.medium)}>持续时间</div>
               <div className={c(t.mt3, FontClassNames.mediumPlus)}>
                 {getDurationString(getJobDuration(jobInfo.jobStatus))}
               </div>
             </div>
             <div className={t.ml4}>
-              <div className={c(t.gray, FontClassNames.medium)}>Retries</div>
+              <div className={c(t.gray, FontClassNames.medium)}>重试次数</div>
               <div className={c(t.mt3, FontClassNames.mediumPlus)}>
                 {jobInfo.jobStatus.retries}
               </div>
@@ -404,7 +404,7 @@ export default class Summary extends React.Component {
                 disabled={isNil(rawJobConfig)}
                 onClick={this.showJobConfig}
               >
-                View Job Config
+                查看任务配置
               </Link>
               {config.launcherType !== 'k8s' && (
                 <React.Fragment>
@@ -415,7 +415,7 @@ export default class Summary extends React.Component {
                     disabled={isNil(jobInfo.jobStatus.appTrackingUrl)}
                     target='_blank'
                   >
-                    Go to Application Tracking Page
+                    跳转至应用程序跟踪页
                   </Link>
                 </React.Fragment>
               )}
@@ -425,7 +425,7 @@ export default class Summary extends React.Component {
                 href={getJobMetricsUrl(jobInfo)}
                 target='_blank'
               >
-                Go to Job Metrics Page
+                查看监控指标
               </Link>
               <div className={c(t.bl, t.mh3)}></div>
               <Link
@@ -433,7 +433,7 @@ export default class Summary extends React.Component {
                 href={`job-event.html?userName=${namespace}&jobName=${jobName}`}
                 target='_blank'
               >
-                Go to Job Event Page
+                查看任务事件列表
               </Link>
               {!isNil(getTensorBoardUrl(jobInfo, rawJobConfig)) && (
                 <div className={c(t.flex)}>
@@ -443,7 +443,7 @@ export default class Summary extends React.Component {
                     href={getTensorBoardUrl(jobInfo, rawJobConfig)}
                     target='_blank'
                   >
-                    Go to TensorBoard Page
+                    查看TensorBoard
                   </Link>
                 </div>
               )}
@@ -459,7 +459,7 @@ export default class Summary extends React.Component {
               </span>
               <span className={c(t.ml2)}>
                 <DefaultButton
-                  text='Stop'
+                  text='停止'
                   onClick={this.showStopJobConfirm}
                   disabled={!isStoppable(jobInfo.jobStatus)}
                 />

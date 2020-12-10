@@ -52,7 +52,7 @@ const TokenList = ({ tokens, onRevoke }) => {
     {
       key: 'value',
       minWidth: 120,
-      name: 'Value',
+      name: 'token',
       isResizable: true,
       onRender(token) {
         return (
@@ -67,7 +67,7 @@ const TokenList = ({ tokens, onRevoke }) => {
       key: 'iat',
       minWidth: 150,
       maxWidth: 150,
-      name: 'Issued At',
+      name: '签发日期',
       isResizable: true,
       onRender(token) {
         return (
@@ -81,7 +81,7 @@ const TokenList = ({ tokens, onRevoke }) => {
       key: 'exp',
       minWidth: 150,
       maxWidth: 150,
-      name: 'Expiration Time',
+      name: '有效期',
       isResizable: true,
       onRender(token) {
         return (
@@ -94,7 +94,7 @@ const TokenList = ({ tokens, onRevoke }) => {
     {
       key: 'type',
       minWidth: 150,
-      name: 'Token Type',
+      name: 'Token类型',
       isResizable: true,
       onRender(token) {
         return (
@@ -111,7 +111,7 @@ const TokenList = ({ tokens, onRevoke }) => {
     {
       key: 'action',
       minWidth: 100,
-      name: 'Action',
+      name: '操作',
       isResizable: true,
       onRender(token) {
         return (
@@ -122,7 +122,7 @@ const TokenList = ({ tokens, onRevoke }) => {
                 rootDisabled: { backgroundColor: 'transparent' },
               }}
               iconProps={{ iconName: 'Delete' }}
-              text='Revoke'
+              text='撤销'
               onClick={() => setRevokeToken(token.value)}
               disabled={processing}
             />
@@ -146,14 +146,14 @@ const TokenList = ({ tokens, onRevoke }) => {
         onDismiss={() => setRevokeToken(null)}
         dialogContentProps={{
           type: DialogType.normal,
-          title: 'Revoke Token',
+          title: '撤销Token',
         }}
         modalProps={{
           isBlocking: true,
         }}
         minWidth={400}
       >
-        <div>Are you sure you want to revoke the selected token?</div>
+        <div>你确定要撤销选中的token吗?</div>
         <DialogFooter>
           <PrimaryButton
             onClick={() => {
@@ -164,12 +164,12 @@ const TokenList = ({ tokens, onRevoke }) => {
               });
             }}
             disabled={processing}
-            text='Confirm'
+            text='确认'
           />
           <DefaultButton
             onClick={() => setRevokeToken(null)}
             disabled={processing}
-            text='Cancel'
+            text='取消'
           />
         </DialogFooter>
       </Dialog>

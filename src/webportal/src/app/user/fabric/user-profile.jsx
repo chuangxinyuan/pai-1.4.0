@@ -204,16 +204,16 @@ const UserProfile = () => {
                 onClick={onCreateApplicationToken}
                 disabled={processing}
               >
-                Create application token
+                创建可用token
               </DefaultButton>
             }
           >
             <TokenList tokens={tokens} onRevoke={onRevokeToken} />
           </UserProfileCard>
-          <UserProfileCard title='Storage'>
+          <UserProfileCard title='存储'>
             <StorageList storageDetails={storageDetails} />
           </UserProfileCard>
-          <UserProfileCard title='Virtual Clusters'>
+          <UserProfileCard title='虚拟集群'>
             <VirtualClusterDetailsList
               virtualClusters={virtualClusters}
               groups={groups}

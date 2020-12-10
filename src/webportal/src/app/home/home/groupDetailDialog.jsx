@@ -16,7 +16,7 @@ import CopyButton from '../../components/copy-button';
 import t from '../../components/tachyons.scss';
 
 const CopySucceeded = props =>
-  props.copied ? <p style={{ color: 'green' }}>Copied succeeded!</p> : null;
+  props.copied ? <p style={{ color: 'green' }}>复制成功!</p> : null;
 
 CopySucceeded.propTypes = {
   copied: PropTypes.bool,
@@ -35,7 +35,7 @@ export default function GroupDetailDialog(props) {
       }}
       styles={{ borderStyle: 'solid' }}
       dialogContentProps={{
-        title: `Granted group of VC '${groupDetails.vc.name}'`,
+        title: `虚拟集群授予组 '${groupDetails.vc.name}'`,
       }}
     >
       <DetailsList
@@ -44,7 +44,7 @@ export default function GroupDetailDialog(props) {
             key: 'name',
             minWidth: 100,
             maxWidth: 150,
-            name: 'Group name',
+            name: '组名称',
             isResizable: true,
             onRender(group) {
               return (
@@ -65,7 +65,7 @@ export default function GroupDetailDialog(props) {
             key: 'alias',
             minWidth: 180,
             maxWidth: 250,
-            name: 'Group alias',
+            name: '组别名',
             isResizable: true,
             onRender(group) {
               return (
@@ -90,7 +90,7 @@ export default function GroupDetailDialog(props) {
           {
             key: 'description',
             minWidth: 180,
-            name: 'Description',
+            name: '描述',
             isResizable: true,
             onRender(group) {
               return (

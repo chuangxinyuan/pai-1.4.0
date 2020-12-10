@@ -65,7 +65,7 @@ const jobName = params.get('jobName');
 
 const theme = createTheme({
   palette: {
-    themePrimary: '#0078d4',
+    themePrimary: '#2C70BA',
     themeLighterAlt: '#eff6fc',
     themeLighter: '#deecf9',
     themeLight: '#c7e0f4',
@@ -267,24 +267,24 @@ export default class TaskRoleContainerList extends React.Component {
     getContainerLogList(logListUrl)
       .then(({ fullLogUrls, tailLogUrls }) => {
         if (config.logType === 'log-manager') {
-          logHint = 'Last 16384 bytes';
+          logHint = '最近16KB';
         }
         switch (logType) {
           case 'stdout':
-            title = `Standard Output (${logHint})`;
+            title = `标准输出 (${logHint})`;
             break;
           case 'stderr':
-            title = `Standard Error (${logHint})`;
+            title = `标准错误 (${logHint})`;
             break;
           case 'all':
-            title = `User logs (${logHint}. Notice: The logs may out of order when merging stdout & stderr streams)`;
+            title = `用户日志 (${logHint}. 注意: 查看合并日志时，日志顺序可能会乱序)`;
             break;
           default:
-            throw new Error(`Unsupported log type`);
+            throw new Error(`不支持日志类型`);
         }
         this.setState(
           {
-            monacoProps: { value: 'Loading...' },
+            monacoProps: { value: '加载中...' },
             monacoTitle: title,
             fullLogUrls: this.convertObjectFormat(fullLogUrls),
             tailLogUrls: this.convertObjectFormat(tailLogUrls),
@@ -307,15 +307,15 @@ export default class TaskRoleContainerList extends React.Component {
     if (config.launcherType !== 'k8s') {
       if (!containerSshInfo) {
         const res = [];
-        res.push('This job does not contain SSH info.');
+        res.push('该任务不支持查看SSH信息');
         res.push(
-          'Please note that if your docker image does not have openssh-server and curl packages, SSH will not be enabled.\n',
+          '请注意，如果您的docker镜像没有openssh服务器和curl包，SSH将不会被启用.\n',
         );
         res.push(
-          'Solution 1: Use one of the recommended docker images on the submission page.',
+          '解决方案1：使用提交页面上推荐的docker镜像之一.',
         );
         res.push(
-          'Solution 2: Use your own image, but enable SSH for it. Please follow the instructions on https://aka.ms/AA5u4sq to do such work.',
+          '解决方案2：使用自己的镜像，但为其启用SSH。请按照https://aka.ms/AA5u4sq上的说明操作.',
         );
         this.setState({
           monacoProps: { value: res.join('\n') },
@@ -555,7 +555,7 @@ export default class TaskRoleContainerList extends React.Component {
   getColumns(showMoreDiagnostics) {
     const taskStateColumn = this.applySortProps({
       key: 'taskState',
-      name: 'Task State',
+      name: '状态',
       headerClassName: FontClassNames.medium,
       minWidth: 100,
       maxWidth: 150,
@@ -564,7 +564,7 @@ export default class TaskRoleContainerList extends React.Component {
     });
     const exitTypeColumn = this.applySortProps({
       key: 'exitType',
-      name: 'Exit Type',
+      name: '退出类型',
       headerClassName: FontClassNames.medium,
       minWidth: 150,
       maxWidth: 200,
@@ -583,7 +583,7 @@ export default class TaskRoleContainerList extends React.Component {
     const defaultColumns = [
       {
         key: 'taskIndex',
-        name: 'Task Index',
+        name: '索引',
         headerClassName: FontClassNames.medium,
         maxWidth: 50,
         isResizable: true,
@@ -596,7 +596,7 @@ export default class TaskRoleContainerList extends React.Component {
       taskStateColumn,
       {
         key: 'retries',
-        name: 'Task Retries',
+        name: '重试次数',
         headerClassName: FontClassNames.medium,
         maxWidth: 150,
         isResizable: true,
@@ -642,7 +642,7 @@ export default class TaskRoleContainerList extends React.Component {
       },
       {
         key: 'ports',
-        name: 'Ports',
+        name: '端口',
         className: FontClassNames.mediumPlus,
         headerClassName: FontClassNames.medium,
         minWidth: 150,
@@ -680,7 +680,7 @@ export default class TaskRoleContainerList extends React.Component {
       },
       {
         key: 'info',
-        name: 'Info & Logs',
+        name: '信息/日志',
         className: localCss.pa0I,
         headerClassName: FontClassNames.medium,
         minWidth: 300,
@@ -697,7 +697,7 @@ export default class TaskRoleContainerList extends React.Component {
                   rootDisabled: { backgroundColor: 'transparent' },
                 }}
                 iconProps={{ iconName: 'CommandPrompt' }}
-                text='SSH Info'
+                text='SSH'
                 onClick={() => {
                   this.showSshInfo(
                     item.containerId,
@@ -716,7 +716,7 @@ export default class TaskRoleContainerList extends React.Component {
                   rootDisabled: { backgroundColor: 'transparent' },
                 }}
                 iconProps={{ iconName: 'TextDocument' }}
-                text='Stdout'
+                text='标准输出'
                 onClick={() =>
                   this.showContainerTailLog(
                     `${config.restServerUri}${item.containerLog}`,
@@ -732,7 +732,7 @@ export default class TaskRoleContainerList extends React.Component {
                   rootDisabled: { backgroundColor: 'transparent' },
                 }}
                 iconProps={{ iconName: 'Error' }}
-                text='Stderr'
+                text='标准错误'
                 onClick={() =>
                   this.showContainerTailLog(
                     `${config.restServerUri}${item.containerLog}`,
@@ -752,7 +752,7 @@ export default class TaskRoleContainerList extends React.Component {
                   items: [
                     {
                       key: 'mergedLog',
-                      name: 'Stdout+Stderr',
+                      name: '合并标准输出和错误',
                       iconProps: { iconName: 'TextDocument' },
                       disabled: isNil(item.containerId),
                       onClick: () =>
@@ -763,7 +763,7 @@ export default class TaskRoleContainerList extends React.Component {
                     },
                     {
                       key: 'trackingPage',
-                      name: 'Show All Logs',
+                      name: '查看所有日志',
                       iconProps: { iconName: 'Link' },
                       onClick: () => {
                         this.showAllLogDialog(
@@ -782,7 +782,7 @@ export default class TaskRoleContainerList extends React.Component {
       exitTypeColumn,
       {
         key: 'exitCode',
-        name: 'Exit Code',
+        name: '退出码',
         minWidth: 260,
         headerClassName: FontClassNames.medium,
         isResizable: true,
@@ -802,7 +802,7 @@ export default class TaskRoleContainerList extends React.Component {
     const optionalColumns = [
       {
         key: 'runningStartTime',
-        name: 'Running Start Time',
+        name: '启动开始时间',
         headerClassName: FontClassNames.medium,
         minWidth: 180,
         maxWidth: 200,
@@ -821,7 +821,7 @@ export default class TaskRoleContainerList extends React.Component {
       },
       {
         key: 'Duration',
-        name: 'Running Duration',
+        name: '启动持续时间',
         minWidth: 150,
         headerClassName: FontClassNames.medium,
         isResizable: true,
@@ -837,7 +837,7 @@ export default class TaskRoleContainerList extends React.Component {
       },
       {
         key: 'nodeName',
-        name: 'Node Name',
+        name: '节点名称',
         headerClassName: FontClassNames.medium,
         minWidth: 100,
         isResizable: true,
@@ -851,7 +851,7 @@ export default class TaskRoleContainerList extends React.Component {
       },
       {
         key: 'exitDiagonostic',
-        name: 'Exit Diagnostics',
+        name: '退出诊断',
         headerClassName: FontClassNames.medium,
         minWidth: 200,
         isResizable: true,
@@ -867,7 +867,7 @@ export default class TaskRoleContainerList extends React.Component {
                 isNil(item.containerExitDiagnostics) &&
                 isNil(item.containerExitSpec)
               }
-              text='Show Exit Diagnostics'
+              text='显示退出诊断结果'
               onClick={() => {
                 const result = [];
                 // exit spec
@@ -905,7 +905,7 @@ export default class TaskRoleContainerList extends React.Component {
                       readOnly: true,
                     },
                   },
-                  monacoTitle: `Task Exit Diagonostics`,
+                  monacoTitle: `退出诊断结果`,
                 });
               }}
             />
@@ -914,7 +914,7 @@ export default class TaskRoleContainerList extends React.Component {
       },
       {
         key: 'containerId',
-        name: 'Container ID',
+        name: '容器ID',
         headerClassName: FontClassNames.medium,
         minWidth: 300,
         isResizable: true,

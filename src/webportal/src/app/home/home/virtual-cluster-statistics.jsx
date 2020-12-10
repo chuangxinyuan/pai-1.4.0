@@ -49,7 +49,7 @@ const vcListColumns = colProps => {
       key: 'name',
       minWidth: 45,
       maxWidth: 100,
-      name: 'Name',
+      name: '名称',
       isResizable: true,
       onRender(vc) {
         return (
@@ -74,7 +74,7 @@ const vcListColumns = colProps => {
       key: 'allocation',
       minWidth: 80,
       maxWidth: 132,
-      name: 'Allocation',
+      name: '资源分配',
       isResizable: true,
       className: zeroPaddingClass,
       onRender(vc) {
@@ -102,7 +102,7 @@ const vcListColumns = colProps => {
     {
       key: 'detail',
       minWidth: 100,
-      name: 'Detail: Used / (Total - Bad)',
+      name: '详情: 已用 / (总量 - 不可用)',
       isResizable: true,
       onRender(vc) {
         const { resourcesUsed, resourcesTotal } = vc;
@@ -166,7 +166,7 @@ const vcListColumns = colProps => {
     columns.push({
       key: 'groups',
       minWidth: 250,
-      name: 'Granted groups',
+      name: '授予的组',
       isResizable: true,
       onRender(vc) {
         const groups = [];
@@ -190,7 +190,7 @@ const vcListColumns = colProps => {
               <p>{getGrantedGroupsDescription(groups)}</p>
             </div>
             <DefaultButton
-              text='Detail'
+              text='查看详情'
               onClick={() => {
                 colProps.setGroupDetails({ vc, groups, hideDialog: false });
               }}
@@ -272,8 +272,8 @@ export const VirtualClusterStatistics = ({
           <Header
             headerName={
               isAdmin
-                ? `Virtual clusters (${Object.keys(userVC).length})`
-                : `My virtual clusters (${Object.keys(userVC).length})`
+                ? `虚拟集群 (${Object.keys(userVC).length})`
+                : `虚拟集群 (${Object.keys(userVC).length})`
             }
             linkHref={'/virtual-clusters.html'}
             linkName={'View all'}

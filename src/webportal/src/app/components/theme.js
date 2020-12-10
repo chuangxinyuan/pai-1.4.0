@@ -36,7 +36,7 @@ export function initTheme() {
       },
     },
     palette: {
-      themePrimary: '#0071bc',
+      themePrimary: '#2C70BA',
       themeLighterAlt: '#f2f8fc',
       themeLighter: '#cde5f4',
       themeLight: '#a5cfeb',
@@ -60,7 +60,7 @@ export function initTheme() {
       white: '#ffffff',
       red: '#eb1123',
       yellowLight: '#fcd116',
-      blue: '#0071bc',
+      blue: '#2C70BA',
       greenLight: '#7fba00',
     },
   });
@@ -69,7 +69,7 @@ export function initTheme() {
 export const statusColor = {
   waiting: '#fcd116',
   failed: '#eb1123',
-  running: '#0071bc',
+  running: '#2C70BA',
   succeeded: '#7fba00',
   get stopped() {
     const { palette } = getTheme();

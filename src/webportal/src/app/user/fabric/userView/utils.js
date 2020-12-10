@@ -17,6 +17,6 @@
 
 export const getVirtualCluster = user => {
   return user.admin
-    ? 'All virtual clusters'
+    ? '所有虚拟集群'
     : user.virtualCluster.sort().join(', ');
 };

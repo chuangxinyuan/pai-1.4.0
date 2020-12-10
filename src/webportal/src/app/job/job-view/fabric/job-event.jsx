@@ -48,9 +48,9 @@ const JobEventPage = () => {
             iconProps={{ iconName: 'revToggleKey' }}
             href={`job-detail.html?username=${userName}&jobName=${jobName}`}
           >
-            Back to Job Detail
+            返回任务详情
           </ActionButton>
-          <Text variant='xLarge'>Job Event List</Text>
+          <Text variant='xLarge'>任务时间列表</Text>
           <JobEventList jobEvents={isEmpty(jobEvents) ? null : jobEvents} />
         </Stack>
       )}

@@ -39,14 +39,14 @@ import { PAI_ENV_VAR } from '../../utils/constants';
 const columns = [
   {
     key: 'key',
-    name: 'Key',
+    name: '变量',
     fieldName: 'key',
     isMultiline: true,
     minWidth: 200,
   },
   {
     key: 'desc',
-    name: 'Description',
+    name: '值',
     isMultiline: true,
     fieldName: 'desc',
     minWidth: 200,
@@ -55,13 +55,13 @@ const columns = [
 
 export const EnvVar = React.memo(({ selected, onSelect }) => (
   <SidebarCard
-    title='PAI environment variables'
+    title='PAI环境变量'
     selected={selected}
     onSelect={onSelect}
   >
     <Stack gap='m'>
       <Hint>
-        You could reference these PAI Environment Variables in command by{' '}
+        你可以在命令中引用这些环境变量，方法是{' '}
         <code>{'$envKey'}</code>
       </Hint>
       <div>

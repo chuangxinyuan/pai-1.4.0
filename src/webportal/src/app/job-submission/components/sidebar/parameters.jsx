@@ -73,7 +73,7 @@ export const Parameters = React.memo(
 
     return (
       <SidebarCard
-        title='Parameters'
+        title='参数'
         tooltip={PROTOCOL_TOOLTIPS.parameters}
         selected={selected}
         onSelect={onSelect}
@@ -81,7 +81,7 @@ export const Parameters = React.memo(
       >
         <Stack gap='m'>
           <Hint>
-            You could reference these parameters in command by{' '}
+            你可以通过如下方式引用这些参数{' '}
             <code>{'<% $parameters.paramKey %>'}</code>.
           </Hint>
           <div>

@@ -34,7 +34,7 @@ function BottomBar() {
   function getSubmit() {
     return {
       key: 'submit',
-      name: 'Submit',
+      name: '提交',
       buttonStyles: { root: buttonPrimaryStyles },
       commandBarButtonAs: PrimaryButton,
       onClick: submit,

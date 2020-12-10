@@ -73,21 +73,21 @@ export const HivedSkuSection = React.memo(props => {
   _setSku();
   return (
     <BasicSection
-      sectionLabel='Resources SKU'
+      sectionLabel='SKU资源'
       sectionTooltip={PROTOCOL_TOOLTIPS.hivedSkuType}
     >
       <FormShortSection gap='m'>
         <Stack horizontal verticalAlign='baseline'>
-          <div style={{ width: '20%' }}>SKU count</div>
+          <div style={{ width: '20%' }}>SKU数量</div>
           <Stack.Item grow>
             <CSpinButton value={skuNum} min={1} onChange={_onSkuNumChange} />
           </Stack.Item>
         </Stack>
         <Stack horizontal verticalAlign='baseline'>
-          <div style={{ width: '20%' }}>SKU type</div>
+          <div style={{ width: '20%' }}>SKU类型</div>
           <Stack.Item grow>
             <Dropdown
-              placeholder='Select SKU type'
+              placeholder='请选择SKU类型'
               options={skuOptions}
               onChange={_onSkuTypeChange}
               selectedKey={skuType}

@@ -174,30 +174,30 @@ export const DockerSection = ({ sectionTooltip, onValueChange, value }) => {
         styles={{ root: dockerSectionStyle.auth.outerForm }}
       >
         <Stack gap='l1' styles={{ root: dockerSectionStyle.auth.innerForm }}>
-          <span>Auth</span>
+          <span>授权</span>
           <Stack gap='m'>
             <AuthTextFiled
               value={auth.username}
-              label='username'
+              label='用户名'
               componentRef={nameInput}
             />
             <AuthTextFiled
               value={auth.password}
-              label='password'
+              label='密码'
               type='password'
               componentRef={password}
             />
             <AuthTextFiled
               value={auth.registryuri}
-              label='registryuri'
+              label='仓库地址'
               componentRef={registryuri}
             />
           </Stack>
           <Stack>
             <Stack horizontal gap='m' horizontalAlign='center'>
-              <PrimaryButton onClick={_onAuthSubmit}>Submit</PrimaryButton>
+              <PrimaryButton onClick={_onAuthSubmit}>提交</PrimaryButton>
               <DefaultButton onClick={() => setShowAuth(false)}>
-                Cancel
+                取消
               </DefaultButton>
             </Stack>
           </Stack>
@@ -207,11 +207,11 @@ export const DockerSection = ({ sectionTooltip, onValueChange, value }) => {
   };
 
   return (
-    <BasicSection sectionLabel='Docker image' sectionTooltip={sectionTooltip}>
+    <BasicSection sectionLabel='Docker镜像' sectionTooltip={sectionTooltip}>
       <Stack horizontal gap='l1'>
         <FormShortSection>
           <Dropdown
-            placeholder='Select a docker image'
+            placeholder='请选择Docker镜像'
             options={DOCKER_OPTIONS}
             onChange={_onDockerImageChange}
             selectedKey={getDockerImageOptionKey(uri)}
@@ -221,7 +221,7 @@ export const DockerSection = ({ sectionTooltip, onValueChange, value }) => {
         <Stack horizontalAlign='start'>
           <Toggle
             checked={isUseCustomizedDocker}
-            label='Custom'
+            label='常规'
             inlineLabel={true}
             styles={{
               label: { order: -1, marginLeft: 0, marginRight: spacing.s1 },
@@ -234,13 +234,13 @@ export const DockerSection = ({ sectionTooltip, onValueChange, value }) => {
         <Stack horizontal gap='l1'>
           <FormShortSection>
             <TextField
-              placeholder='Enter docker uri...'
-              errorMessage={isEmpty(uri) ? 'Docker should not be empty' : null}
+              placeholder='请输入docker uri'
+              errorMessage={isEmpty(uri) ? '不能为空' : null}
               onChange={_onUriChange}
               value={uri}
             />
           </FormShortSection>
-          <DefaultButton onClick={_onAuthClick}>Auth</DefaultButton>
+          <DefaultButton onClick={_onAuthClick}>授权</DefaultButton>
         </Stack>
       )}
       {showAuth && _authSection()}

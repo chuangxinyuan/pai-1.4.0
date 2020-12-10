@@ -46,37 +46,37 @@ const LoginModal = ({ isOpen, lock, error, onDismiss, onLogin }) => {
             t.h3,
             t.w3,
             t.brPill,
-            t.bgBlack,
+            t.bgBlue,
             t.flex,
             t.justifyCenter,
             t.itemsCenter,
           )}
         >
-          <img className={c(t.h2, t.w2)} src='/assets/img/favicon.ico' />
+          <img className={c(t.h3, t.w3)} src='/assets/img/favicon.ico' />
         </div>
         <div
           className={c(FontClassNames.medium, t.center, t.mt4, t.mb3, t.tc)}
           style={{ fontWeight: FontWeights.semibold }}
         >
-          Sign in with your OpenPAI account
+        登录
         </div>
         {error && (
           <MessageBar messageBarType={MessageBarType.error}>{error}</MessageBar>
         )}
         <form onSubmit={onSubmit}>
           <div className={c(t.center, t.mt3)}>
-            <TextField componentRef={usernameRef} label='Username' />
+            <TextField componentRef={usernameRef} label='用户名' />
           </div>
           <div className={c(t.center, t.mt3)}>
             <TextField
               componentRef={passwordRef}
-              label='Password'
+              label='密码'
               type='password'
             />
           </div>
           <div className={c(t.center, t.mt4, t.tc)}>
             <PrimaryButton
-              text='Sign in'
+              text='登录'
               type='submit'
               styles={{ root: [t.w4] }}
               disabled={lock}

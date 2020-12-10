@@ -66,11 +66,11 @@ export const JobInformation = React.memo(
       <Card>
         <FormPage>
           <FormTextField
-            sectionLabel={'Job name'}
+            sectionLabel={'任务名称'}
             value={name}
             shortStyle
             onChange={onNameChange}
-            placeholder='Enter job name'
+            placeholder='请输入任务名称'
           />
           <VirtualCluster
             onChange={onVirtualClusterChange}
@@ -80,7 +80,7 @@ export const JobInformation = React.memo(
             <FormSpinButton
               sectionTooltip={PROTOCOL_TOOLTIPS.policy}
               sectionOptional
-              sectionLabel={'Retry count'}
+              sectionLabel={'重试次数'}
               shortStyle
               value={jobRetryCount}
               onChange={onRetryCountChange}

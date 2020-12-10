@@ -19,7 +19,7 @@ import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import 'whatwg-fetch';
 
-import { FontClassNames, ColorClassNames } from '@uifabric/styling';
+import { FontClassNames } from '@uifabric/styling';
 import c from 'classnames';
 import { isEmpty } from 'lodash';
 import { initializeIcons } from 'office-ui-fabric-react';
@@ -27,7 +27,8 @@ import querystring from 'querystring';
 import React, { useState, useCallback, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 
-import Bottom from './index/bottom';
+// import Bottom from './index/bottom';
+import Feature from './index/feature';
 import { login } from './index/conn';
 import Jumbotron from './index/jumbotron';
 import LoginModal from './index/login-modal';
@@ -37,7 +38,6 @@ import { SpinnerLoading } from '../components/loading';
 import t from 'tachyons-sass/tachyons.scss';
 
 let loginTarget = '/home.html';
-
 const query = new URLSearchParams(window.location.search);
 
 if (query.has('errorMessage')) {
@@ -127,28 +127,29 @@ const Index = () => {
     >
       {/* top */}
       <div
-        className={c(
-          ColorClassNames.themePrimaryBackground,
-          t.pv3,
-          t.ph4,
-          t.flex,
-          t.justifyBetween,
-        )}
+        className={c(t.pv3, t.ph4, t.flex, t.justifyBetween)}
+        style={{
+          backgroundColor: '#2C70BA',
+        }}
       >
-        <div className={c(FontClassNames.large, t.white)}>Platform for AI</div>
+        <div className={c(FontClassNames.large, t.white, t.mv0)}>
+          <span className={c(t.ml3)}>人工智能资源调度管理平台</span>
+        </div>
         <div
-          className={c(FontClassNames.large, t.white, t.dim, t.pointer)}
+          className={c(FontClassNames.large, t.white, t.dim, t.pointer, t.mv0)}
           onClick={showLoginModal}
         >
-          Sign in
+          登录
         </div>
       </div>
       {/* content */}
       <div className={c(t.flexAuto, t.flex, t.flexColumn, t.relative)}>
         {/* jumbotron */}
         <Jumbotron showLoginModal={showLoginModal} />
+        {/* features */}
+        <Feature />
         {/* bottom */}
-        <Bottom />
+        {/*<Bottom />*/}
       </div>
       {/* login modal */}
       <LoginModal

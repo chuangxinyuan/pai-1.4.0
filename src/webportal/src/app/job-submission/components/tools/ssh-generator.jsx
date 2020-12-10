@@ -93,7 +93,7 @@ export default function SSHGenerator({
             className={c(t.mb2, t.fw6, FontClassNames.semibold)}
             style={{ fontSize: FontSizes.icon }}
           >
-            SSH Key Generator
+            SSH密钥生成器
           </span>
         ),
       }}
@@ -105,22 +105,21 @@ export default function SSHGenerator({
       }}
     >
       <Hint>
-        Please download SSH private key then click <b>Use Public Key</b> button
-        to use this key pair in job. Then after job submitted, you can ssh to
-        job containers as user root with the downloaded private key through
-        container ip and ssh port. Try using{' '}
+        请下载SSH私钥，然后单击 <b>使用公钥</b> 按钮
+        在任务中使用此密钥对. 在任务提交后, 你可以使用下载的密钥
+        通过容器ip和ssh端口，以root用户连接到容器
+        形如{' '}
         <code>
           {'ssh -i <private key path> -p <ssh port> root@<container ip>'}
         </code>{' '}
-        to ssh to job container.
       </Hint>
 
-      <Separator>SSH key pair</Separator>
+      <Separator>SSH密钥对</Separator>
 
       <Stack horizontal padding='l1' gap='l1' styles={{ root: { width: 860 } }}>
         <Stack padding='s1' gap='s1' grow={1}>
           <TextField
-            label='Private Key'
+            label='私钥'
             multiline
             rows={20}
             readonly
@@ -133,12 +132,12 @@ export default function SSHGenerator({
               downloadAsFile(sshKeys.private, 'id_rsa_pai', ev);
             }}
           >
-            Download Private Key
+            下载私钥
           </DefaultButton>
         </Stack>
         <Stack padding='s1' gap='s1' grow={1}>
           <TextField
-            label='Public Key'
+            label='公钥'
             multiline
             rows={20}
             readonly
@@ -148,7 +147,7 @@ export default function SSHGenerator({
           <DefaultButton
             onClick={ev => downloadAsFile(sshKeys.public, 'id_rsa_pai.pub', ev)}
           >
-            Download Public Key
+            下载公钥
           </DefaultButton>
         </Stack>
       </Stack>
@@ -165,7 +164,7 @@ export default function SSHGenerator({
         <Stack.Item align='end'>
           {!downloadedPriKey && (
             <Label required={true}>
-              Download private key before use ssh keys in job!
+              在任务中使用ssh密钥之前先下载私钥！!
             </Label>
           )}
           <DefaultButton
@@ -173,11 +172,11 @@ export default function SSHGenerator({
             onClick={handleConfirm}
             disabled={!downloadedPriKey}
           >
-            Use Public Key
+            使用公钥
           </DefaultButton>
         </Stack.Item>
         <Stack.Item align='end'>
-          <DefaultButton onClick={handleCancel}>Cancel</DefaultButton>
+          <DefaultButton onClick={handleCancel}>取消</DefaultButton>
         </Stack.Item>
       </Stack>
     </Dialog>

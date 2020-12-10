@@ -69,7 +69,7 @@ export const TabFormContent = ({
           shortStyle
           value={jobTaskRole.name}
           onChange={value => _onValueChange('name', value)}
-          placeholder='Enter task role name...'
+          placeholder='请输入role name...'
         />
       )}
       <CommandSection
@@ -78,9 +78,9 @@ export const TabFormContent = ({
       />
       {!isSingle && (
         <FormSpinButton
-          sectionLabel={'Instances'}
+          sectionLabel={'instance'}
           shortStyle
-          textFiledProps={{ placeholder: 'Enter instance number...' }}
+          textFiledProps={{ placeholder: '请输入instance数量...' }}
           value={jobTaskRole.instances}
           min={1}
           onChange={value => _onValueChange('instances', value)}
@@ -121,7 +121,7 @@ export const TabFormContent = ({
           />
           <FormSpinButton
             sectionTooltip={PROTOCOL_TOOLTIPS.policy}
-            sectionLabel={'Task retry count'}
+            sectionLabel={'重试策略'}
             shortStyle
             sectionOptional
             value={jobTaskRole.taskRetryCount || 0}

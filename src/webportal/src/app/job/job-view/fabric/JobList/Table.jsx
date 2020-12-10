@@ -100,7 +100,7 @@ export default function Table() {
   const nameColumn = applySortProps({
     key: 'name',
     minWidth: 200,
-    name: 'Name',
+    name: '任务名称',
     fieldName: 'name',
     className: FontClassNames.mediumPlus,
     headerClassName: FontClassNames.medium,
@@ -117,7 +117,7 @@ export default function Table() {
   const modifiedColumn = applySortProps({
     key: 'submissionTime',
     minWidth: 150,
-    name: 'Submission Time',
+    name: '提交时间',
     className: FontClassNames.mediumPlus,
     headerClassName: FontClassNames.medium,
     isResizable: true,
@@ -132,7 +132,7 @@ export default function Table() {
   const userColumn = applySortProps({
     key: 'user',
     minWidth: 100,
-    name: 'User',
+    name: '用户',
     fieldName: 'username',
     className: FontClassNames.mediumPlus,
     headerClassName: FontClassNames.medium,
@@ -142,7 +142,7 @@ export default function Table() {
   const durationColumn = {
     key: 'duration',
     minWidth: 60,
-    name: 'Duration',
+    name: '持续时间',
     className: FontClassNames.mediumPlus,
     headerClassName: FontClassNames.medium,
     isResizable: true,
@@ -153,7 +153,7 @@ export default function Table() {
   const virtualClusterColumn = applySortProps({
     key: 'virtualCluster',
     minWidth: 100,
-    name: 'Virtual Cluster',
+    name: '虚拟集群',
     fieldName: 'virtualCluster',
     className: FontClassNames.mediumPlus,
     headerClassName: FontClassNames.medium,
@@ -163,7 +163,7 @@ export default function Table() {
   const retriesColumn = applySortProps({
     key: 'retries',
     minWidth: 60,
-    name: 'Retries',
+    name: '重试次数',
     fieldName: 'retries',
     className: FontClassNames.mediumPlus,
     headerClassName: FontClassNames.medium,
@@ -181,7 +181,7 @@ export default function Table() {
   const gpuCountColumn = applySortProps({
     key: 'gpuCount',
     minWidth: 60,
-    name: 'GPUs',
+    name: 'GPU数量',
     fieldName: 'totalGpuNumber',
     className: FontClassNames.mediumPlus,
     headerClassName: FontClassNames.medium,
@@ -190,7 +190,7 @@ export default function Table() {
   const statusColumn = applySortProps({
     key: 'status',
     minWidth: 100,
-    name: 'Status',
+    name: '任务状态',
     headerClassName: FontClassNames.medium,
     isResizable: true,
     isFiltered: filter.statuses.size > 0,
@@ -217,7 +217,7 @@ export default function Table() {
   const actionsColumn = {
     key: 'actions',
     minWidth: 100,
-    name: 'Actions',
+    name: '操作',
     headerClassName: FontClassNames.medium,
     className: zeroPaddingClass,
     columnActionsMode: ColumnActionsMode.disabled,
@@ -291,12 +291,11 @@ export default function Table() {
             className={c(t.mt5, FontClassNames.xLarge)}
             style={{ fontWeight: FontWeights.semibold }}
           >
-            No results matched your search.
+            没有搜索出匹配的结果。
           </div>
           <div className={c(t.mt4, FontClassNames.mediumPlus)}>
-            You could search{' '}
-            <Link onClick={() => setFilter(new Filter())}>all the jobs</Link> or
-            try advanced search with Filters.
+            你可以搜索{' '}
+            <Link onClick={() => setFilter(new Filter())}>所有任务</Link> 或者尝试使用过滤器进行高级搜索。
           </div>
         </div>
       </div>

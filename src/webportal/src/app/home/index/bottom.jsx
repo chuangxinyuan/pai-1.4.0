@@ -52,7 +52,7 @@ const Bottom = () => (
         </div>
       </div>
       <Link
-        href='https://openpai.readthedocs.io/en/latest/manual/cluster-user/quick-start.html'
+        href='https://openpai.readthedocs.io/zh_CN/latest/manual/cluster-user/quick-start.html'
         target='_blank'
         style={{ fontWeight: FontWeights.semibold }}
       >
@@ -90,7 +90,7 @@ const Bottom = () => (
         </div>
       </div>
       <Link
-        href='https://openpai.readthedocs.io/en/latest/manual/cluster-user/quick-start.html#learn-the-hello-world-job'
+        href='https://openpai.readthedocs.io/zh_CN/latest/manual/cluster-user/quick-start.html#learn-the-hello-world-job'
         target='_blank'
         style={{ fontWeight: FontWeights.semibold }}
       >

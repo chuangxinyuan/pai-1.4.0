@@ -159,25 +159,25 @@ const Sidebar = ({ className, style }) => {
           {
             links: [
               {
-                name: 'Home',
+                name: '主页',
                 url: '/home.html',
                 icon: 'Home',
                 key: KEY_HOME,
               },
               {
-                name: 'Submit Job',
+                name: '任务提交',
                 url: '/submit.html',
                 icon: 'NewFolder',
                 key: KEY_SUBMIT_JOB,
               },
               {
-                name: 'Jobs',
+                name: '任务管理',
                 url: '/job-list.html',
                 icon: 'CheckList',
                 key: KEY_JOBS,
               },
               {
-                name: 'Virtual Clusters',
+                name: '虚拟集群',
                 url: '/virtual-clusters.html',
                 icon: 'Quantity',
                 style: {
@@ -189,7 +189,7 @@ const Sidebar = ({ className, style }) => {
                 key: KEY_VC,
               },
               {
-                name: 'Administration',
+                name: '管理员',
                 isExpanded: administrationExpanded,
                 onClick: () =>
                   setAdministrationExpanded(!administrationExpanded),
@@ -200,31 +200,31 @@ const Sidebar = ({ className, style }) => {
                 },
                 links: [
                   {
-                    name: 'Dashboard',
+                    name: '仪表板',
                     url: '/dashboard.html',
                     icon: 'SpeedHigh',
                     key: KEY_DASHBOARD,
                   },
                   {
-                    name: 'Services',
+                    name: '服务器',
                     url: '/cluster-view/services.html',
                     key: KEY_SERVICES,
                     icon: 'MapLayers',
                   },
                   {
-                    name: 'Hardware',
+                    name: '硬件',
                     url: '/cluster-view/hardware.html',
                     key: KEY_HARDWARE,
                     icon: 'HardDriveGroup',
                   },
                   {
-                    name: 'K8s Dashboard',
+                    name: 'K8s仪表板',
                     url: '/cluster-view/k8s.html',
                     key: KEY_K8S_DASHBOARD,
                     icon: 'SpeedHigh',
                   },
                   {
-                    name: 'User Management',
+                    name: '用户管理',
                     url: '/user-view.html',
                     key: KEY_USER_MANAGEMENT,
                     style: {
@@ -236,18 +236,14 @@ const Sidebar = ({ className, style }) => {
                 ],
               },
               {
-                name: `Feedback (version ${versionTag})`,
-                url: `https://github.com/Microsoft/pai/issues/new?${qs.stringify(
-                  {
-                    title: `Feedback ${window.PAI_VERSION}`,
-                  },
-                )}`,
+                name: `联系我们`,
+                url: `https://www.shaiic.com/`,
                 key: KEY_FEEDBACK,
                 icon: 'Feedback',
                 target: '_blank',
               },
               {
-                name: 'Plugins',
+                name: '插件',
                 isExpanded: pluginExpanded,
                 onClick: () => setPluginExpanded(!pluginExpanded),
                 icon: 'Puzzle',
