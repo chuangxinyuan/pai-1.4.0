@@ -387,7 +387,7 @@ class JobDetail extends React.Component {
               <div className={t.bgWhite}>
                 <MessageBar messageBarType={MessageBarType.warning}>
                   <Text variant='mediumPlus'>
-                    This job has been transferred to{' '}
+                    这个任务已经迁移至{' '}
                     {transferredURLs
                       .map(url => (
                         <a
@@ -409,7 +409,7 @@ class JobDetail extends React.Component {
               <div className={t.bgWhite}>
                 <MessageBar messageBarType={MessageBarType.warning}>
                   <Text variant='mediumPlus'>
-                    You have transfer attempts to cluster{' '}
+                    您有转移尝试群集{' '}
                     {transferFailedClusters
                       .map(item => (
                         <a
@@ -422,11 +422,11 @@ class JobDetail extends React.Component {
                         </a>
                       ))
                       .reduce((prev, curr) => [prev, ', ', curr])}
-                    . Please go to{' '}
+                    . 请转到{' '}
                     {transferFailedClusters.length > 1
                       ? 'these clusters'
                       : 'the cluster'}{' '}
-                    to check whether the transfer is successful.
+                    检查迁移是否成功.
                   </Text>
                 </MessageBar>
               </div>

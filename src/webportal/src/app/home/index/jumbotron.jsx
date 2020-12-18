@@ -81,7 +81,8 @@ const Jumbotron = ({ showLoginModal }) => (
             onClick={showLoginModal}
           />
         </div>
-        <SignInBackground style={{ maxWidth: '28rem', minWidth: '25rem' }} />
+        <img src="../../../assets/img/bg.png" alt="" style={{ maxWidth: '28rem', minWidth: '25rem' }}/>
+        {/*<SignInBackground style={{ maxWidth: '28rem', minWidth: '25rem' }} />*/}
       </div>
     </MediaQuery>
   </div>

@@ -289,19 +289,19 @@ const JobTransferPage = () => {
             <Stack className={styles.header} gap={12}>
               <Stack horizontal={true} horizontalAlign='center'>
                 <Text variant='xxLarge' className={styles.title}>
-                  Job Transfer
+                  任务迁移
                 </Text>
               </Stack>
               <Stack>
                 <Text variant='medium' className={styles.subTitle}>
-                  Please make sure configurations and dependencies using in the
-                  job YAML are set properly in the target cluster.
+                  请确保在中使用的配置和依赖项
+                  在目标集群中正确设置任务YAML.
                 </Text>
               </Stack>
             </Stack>
             <Stack className={styles.item}>
               <Stack horizontal gap={10}>
-                <Label required>Transfer to</Label>
+                <Label required>迁移至</Label>
                 <Stack grow>
                   <Dropdown
                     placeholder={'select a bounded cluster'}
@@ -320,7 +320,7 @@ const JobTransferPage = () => {
             </Stack>
             <Stack className={styles.item}>
               <TextField
-                label='Job Name'
+                label='任务名称'
                 value={_.get(jobConfig.getObject(), 'name', '')}
                 onChange={e => {
                   setJobConfig((prevJobConfig, props) => {
@@ -334,7 +334,7 @@ const JobTransferPage = () => {
             </Stack>
             <Stack className={styles.item}>
               <TextField
-                label='VC Name'
+                label='VC名称'
                 value={_.get(
                   jobConfig.getObject(),
                   'defaults.virtualCluster',
@@ -364,12 +364,12 @@ const JobTransferPage = () => {
               <PrimaryButton
                 disabled={transferring || selectedCluster === ''}
                 onClick={onClickTransfer}
-                text='Confirm Transfer'
+                text='确认'
               />
               <DefaultButton
                 disabled={transferring}
                 onClick={onOpenEditor}
-                text='Edit YAML'
+                text='编辑Yaml'
               />
             </Stack>
           </Stack>
@@ -378,7 +378,7 @@ const JobTransferPage = () => {
       <MonacoPanel
         isOpen={showEditor}
         onDismiss={onCloseEditor}
-        title='Protocol YAML Editor'
+        title='协议YAML编辑器'
         header={
           <Stack grow horizontal horizontalAlign='end'>
             <DefaultButton
@@ -390,7 +390,7 @@ const JobTransferPage = () => {
                 rootPressed: [ColorClassNames.blackBackground],
                 label: [ColorClassNames.white],
               }}
-              text='Protocol Schema'
+              text='协议架构'
             />
           </Stack>
         }
@@ -410,7 +410,7 @@ const JobTransferPage = () => {
                     ColorClassNames.black,
                   ],
                 }}
-                text='Save'
+                text='保存'
                 disabled={isEditorYAMLValid === false}
               />
             </StackItem>

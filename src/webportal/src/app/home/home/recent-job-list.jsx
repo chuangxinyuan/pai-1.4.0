@@ -68,13 +68,13 @@ const DummyContent = () => {
           <Stack.Item>
             <PrimaryButton
               styles={{ root: [{ width: 120 }] }}
-              text='Create a job'
+              text='创建一个任务'
               href='submit.html'
             />
           </Stack.Item>
           <Stack.Item>
             <DefaultButton
-              text='Tutorial'
+              text='查看说明'
               styles={{ root: [{ width: 120 }] }}
               href='https://openpai.readthedocs.io/zh_CN/latest/manual/cluster-user/quick-start.html'
               target='_blank'

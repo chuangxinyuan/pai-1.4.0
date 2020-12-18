@@ -104,7 +104,7 @@ const BoundedClusterDialog = ({ onDismiss, onAddBoundedCluster }) => {
         onDismiss={onDismiss}
         dialogContentProps={{
           type: DialogType.normal,
-          title: 'Add a Bounded Cluster',
+          title: '添加集群',
         }}
         modalProps={{
           isBlocking: true,
@@ -114,21 +114,21 @@ const BoundedClusterDialog = ({ onDismiss, onAddBoundedCluster }) => {
         <div>
           <div className={t.mt1}>
             <TextField
-              label='Cluster Alias (Only A-Z, a-z, 0-9, - and _ are allowed):'
+              label='集群别名 (只有 A-Z, a-z, 0-9, - and _ 有效):'
               value={clusterAlias}
               onChange={e => setClusterAlias(e.target.value)}
             />
           </div>
           <div className={t.mt1}>
             <TextField
-              label='Cluster URI (Starts with http:// or https://):'
+              label='集群 URI (比如 http:// or https://):'
               value={clusterUri}
               onChange={e => setClusterUri(e.target.value)}
             />
           </div>
           <div className={t.mt1}>
             <TextField
-              label='Your username on this cluster:'
+              label='这个集群中你的用户名:'
               value={username}
               onChange={e => setUsername(e.target.value)}
             />
@@ -148,7 +148,7 @@ const BoundedClusterDialog = ({ onDismiss, onAddBoundedCluster }) => {
           <DefaultButton
             onClick={onDismiss}
             disabled={processing}
-            text='Cancel'
+            text='取消'
           />
         </DialogFooter>
       </Dialog>
@@ -157,15 +157,15 @@ const BoundedClusterDialog = ({ onDismiss, onAddBoundedCluster }) => {
         onDismiss={() => setError('')}
         dialogContentProps={{
           type: DialogType.normal,
-          title: 'Error',
-          subText: error,
+          title: '错误',
+          subText: 错误,
         }}
         modalProps={{
           isBlocking: true,
         }}
       >
         <DialogFooter>
-          <DefaultButton onClick={() => setError('')}>OK</DefaultButton>
+          <DefaultButton onClick={() => setError('')}>确认</DefaultButton>
         </DialogFooter>
       </Dialog>
     </div>

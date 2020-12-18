@@ -54,7 +54,7 @@ const BoundedClusterList = ({ boundedClusters, onDelete }) => {
       key: 'clusterAlias',
       minWidth: 150,
       maxWidth: 150,
-      name: 'Cluster Alias',
+      name: '集群别名',
       isResizable: true,
       onRender(clusterConfig) {
         return (
@@ -68,7 +68,7 @@ const BoundedClusterList = ({ boundedClusters, onDelete }) => {
       key: 'clusterUri',
       minWidth: 150,
       maxWidth: 150,
-      name: 'Cluster URI',
+      name: '集群URI',
       isResizable: true,
       onRender(clusterConfig) {
         return (
@@ -81,7 +81,7 @@ const BoundedClusterList = ({ boundedClusters, onDelete }) => {
     {
       key: 'username',
       minWidth: 150,
-      name: 'Username',
+      name: '用户名',
       isResizable: true,
       onRender(clusterConfig) {
         return (
@@ -94,7 +94,7 @@ const BoundedClusterList = ({ boundedClusters, onDelete }) => {
     {
       key: 'action',
       minWidth: 100,
-      name: 'Action',
+      name: '操作',
       isResizable: true,
       onRender(clusterConfig) {
         return (
@@ -105,7 +105,7 @@ const BoundedClusterList = ({ boundedClusters, onDelete }) => {
                 rootDisabled: { backgroundColor: 'transparent' },
               }}
               iconProps={{ iconName: 'Delete' }}
-              text='Delete'
+              text='删除'
               onClick={() => setDeleteClusterAlias(clusterConfig.alias)}
               disabled={processing}
             />
@@ -129,14 +129,14 @@ const BoundedClusterList = ({ boundedClusters, onDelete }) => {
         onDismiss={() => setDeleteClusterAlias(null)}
         dialogContentProps={{
           type: DialogType.normal,
-          title: 'Delete a bounded cluster',
+          title: '删除一个绑定的集群',
         }}
         modalProps={{
           isBlocking: true,
         }}
         minWidth={400}
       >
-        <div>Are you sure you want to delete the selected cluster?</div>
+        <div>你确认要删除选择的集群吗?</div>
         <DialogFooter>
           <PrimaryButton
             onClick={() => {
@@ -152,12 +152,12 @@ const BoundedClusterList = ({ boundedClusters, onDelete }) => {
                 });
             }}
             disabled={processing}
-            text='Confirm'
+            text='确认'
           />
           <DefaultButton
             onClick={() => setDeleteClusterAlias(null)}
             disabled={processing}
-            text='Cancel'
+            text='取消'
           />
         </DialogFooter>
       </Dialog>

@@ -101,7 +101,7 @@ const CloneButton = ({ rawJobConfig, namespace, jobName, enableTransfer }) => {
           items: [
             {
               key: 'transfer',
-              text: '转换',
+              text: '迁移',
               iconProps: { iconName: 'Forward' },
               onClick: () => {
                 const query = {
