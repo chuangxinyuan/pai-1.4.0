@@ -158,7 +158,7 @@ const BoundedClusterDialog = ({ onDismiss, onAddBoundedCluster }) => {
         dialogContentProps={{
           type: DialogType.normal,
           title: '错误',
-          subText: 错误,
+          subText: '错误',
         }}
         modalProps={{
           isBlocking: true,
