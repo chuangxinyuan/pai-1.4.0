@@ -169,7 +169,7 @@ const UserProfile = () => {
     }
     if (!(clusterAlias in updatedBoundedClusters)) {
       throw new Error(
-        `Cannot find cluster ${clusterAlias} in your bounded clusters!`,
+        `找不到集群别名 ${clusterAlias} !`,
       );
     }
     delete updatedBoundedClusters[clusterAlias];
@@ -221,12 +221,12 @@ const UserProfile = () => {
           </UserProfileCard>
           {enableJobTransfer === 'true' && (
             <UserProfileCard
-              title='Bounded Clusters'
+              title='绑定集群'
               headerButton={
                 <DefaultButton
                   onClick={() => setShowBoundedClusterDialog(true)}
                 >
-                  Add a bounded cluster
+                  添加集群
                 </DefaultButton>
               }
             >
@@ -247,7 +247,7 @@ const UserProfile = () => {
                   className={c(t.mt5, FontClassNames.large)}
                   style={{ fontWeight: FontWeights.regular }}
                 >
-                  There is no added bounded cluster.
+                  没有一个绑定的集群.
                 </div>
               )}
             </UserProfileCard>
