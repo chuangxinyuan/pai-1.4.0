@@ -17,13 +17,138 @@
 
 import { FontClassNames, FontWeights } from '@uifabric/styling';
 import c from 'classnames';
-import{ Icon } from 'office-ui-fabric-react'
+import { Icon } from 'office-ui-fabric-react';
 import React from 'react';
 import t from 'tachyons-sass/tachyons.scss';
 
 const Feature = () => (
-  <div>
-    <div className={c(t.bgWhite, t.pt5, t.ph6, t.flexL, t.center)}>
+  <div style={{ fontFamily: 'Microsoft YaHei' }}>
+    <div
+      className={c(t.pt5)}
+      style={{
+        width: '100%',
+        fontSize: '2.2rem',
+        color: '#18588c',
+        lineHeight: '5rem',
+        textAlign: 'center',
+        fontWeight: 'bold',
+      }}
+    >
+      平台优势
+    </div>
+    <div className={c(t.bgWhite, t.pb4, t.flexL, t.center)} style={{ width: '50rem' }}>
+      <div
+        style={{
+          width: '18rem',
+          height: '.7rem',
+          borderBottom: '1px solid #eaeaea',
+        }}
+      ></div>
+      <div
+        className={c(t.trackedMega, t.flex, t.flexColumn, t.itemsCenter)}
+        style={{
+          width: '14rem',
+          height: '1px',
+          fontSize: '1.4rem',
+          color: '#999999',
+          lineHeight: '1.4rem',
+        }}
+      >
+        ADVANTAGES
+      </div>
+      <div
+        style={{
+          width: '18rem',
+          height: '.7rem',
+          borderBottom: '1px solid #eaeaea',
+        }}
+      ></div>
+    </div>
+    <div
+      style={{
+        width: '100%',
+        fontSize: '1.1rem',
+        color: '#333333',
+        lineHeight: '1.1rem',
+        textAlign: 'center',
+      }}
+    >
+      <p>支持Tensorflow、Pytorch、MXNet、Keras等多种深度学习计算框架</p>
+      <p>适配智慧金融、智慧物流、智慧医疗等各种人工场景</p>
+      <p>具备数据处理标记、模型开发、模型训练优化和部署全程保驾护航的能力</p>
+    </div>
+    <div
+      className={c(t.bgWhite, t.pt4, t.flexL, t.center, t.justifyAround)}
+      style={{
+        width: '72rem',
+        fontSize: '1.2rem',
+        color: '#333333',
+      }}
+    >
+      <img
+        src='../../../assets/img/card1.png'
+        alt=''
+        style={{ width: '20rem' }}
+      />
+      <img
+        src='../../../assets/img/card2.png'
+        alt=''
+        style={{ width: '20rem' }}
+      />
+      <img
+        src='../../../assets/img/card3.png'
+        alt=''
+        style={{ width: '20rem' }}
+      />
+    </div>
+    <div
+      className={c(t.pt5)}
+      style={{
+        width: '100%',
+        fontSize: '2.2rem',
+        color: '#18588c',
+        lineHeight: '5rem',
+        textAlign: 'center',
+        fontWeight: 'bold',
+      }}
+    >
+      平台亮点
+    </div>
+    <div
+      className={c(t.bgWhite, t.flexL, t.center)}
+      style={{ maxWidth: '50rem', fontFamily: 'Microsoft YaHei' }}
+    >
+      <div
+        style={{
+          width: '18rem',
+          height: '.7rem',
+          borderBottom: '1px solid #eaeaea',
+        }}
+      ></div>
+      <div
+        className={c(t.trackedMega, t.flex, t.flexColumn, t.itemsCenter)}
+        style={{
+          width: '14rem',
+          height: '1px',
+          fontSize: '1.4rem',
+          color: '#999999',
+          lineHeight: '1.4rem',
+        }}
+      >
+        HIGHLIGHTS
+      </div>
+      <div
+        style={{
+          width: '18rem',
+          height: '.7rem',
+          borderBottom: '1px solid #eaeaea',
+        }}
+      ></div>
+    </div>
+    <div
+      className={c(t.bgWhite, t.pt5, t.flexL, t.center)}
+      style={{ maxWidth: '75rem', fontFamily: 'Microsoft YaHei' }}
+    >
       <div
         className={c(
           t.w33L,
@@ -31,12 +156,16 @@ const Feature = () => (
           t.tc,
           t.flex,
           t.flexColumn,
-          t.itemsCenter,
+          t.itemsStart,
           t.justifyBetween,
         )}
       >
         <div className={c(t.flex, t.flexColumn, t.itemsCenter)}>
-          <Icon iconName="BuildIssue" title="BuildIssue" style={{ fontSize: '5rem' }}  />
+          <img
+            src='../../../assets/img/icon1.png'
+            alt=''
+            style={{ width: '6.6rem' }}
+          />
           <div
             className={c(FontClassNames.xxLarge, t.mv4)}
             style={{ fontWeight: FontWeights.semibold }}
@@ -66,7 +195,11 @@ const Feature = () => (
         )}
       >
         <div className={c(t.flex, t.flexColumn, t.itemsCenter)}>
-          <Icon iconName="DrillExpand" title="DrillExpand" style={{ fontSize: '5rem' }}  />
+          <img
+            src='../../../assets/img/icon2.png'
+            alt=''
+            style={{ width: '6.6rem' }}
+          />
           <div
             className={c(FontClassNames.xxLarge, t.mv4)}
             style={{ fontWeight: FontWeights.semibold }}
@@ -90,12 +223,16 @@ const Feature = () => (
           t.tc,
           t.flex,
           t.flexColumn,
-          t.itemsCenter,
+          t.itemsEnd,
           t.justifyBetween,
         )}
       >
         <div className={c(t.flex, t.flexColumn, t.itemsCenter)}>
-          <Icon iconName="GroupObject" title="GroupObject" style={{ fontSize: '5rem' }}  />
+          <img
+            src='../../../assets/img/icon3.png'
+            alt=''
+            style={{ width: '6.6rem' }}
+          />
           <div
             className={c(FontClassNames.xxLarge, t.mv4)}
             style={{ fontWeight: FontWeights.semibold }}
@@ -111,7 +248,10 @@ const Feature = () => (
         </div>
       </div>
     </div>
-    <div className={c(t.bgWhite, t.pt5, t.pb5, t.ph6, t.flexL, t.center)}>
+    <div
+      className={c(t.bgWhite, t.pt5, t.pb5, t.flexL, t.center)}
+      style={{ maxWidth: '75rem', fontFamily: 'Microsoft YaHei' }}
+    >
       <div
         className={c(
           t.w33L,
@@ -119,12 +259,16 @@ const Feature = () => (
           t.tc,
           t.flex,
           t.flexColumn,
-          t.itemsCenter,
+          t.itemsStart,
           t.justifyBetween,
         )}
       >
         <div className={c(t.flex, t.flexColumn, t.itemsCenter)}>
-          <Icon iconName="ExternalTFVC" title="ExternalTFVC" style={{ fontSize: '5rem' }}  />
+          <img
+            src='../../../assets/img/icon4.png'
+            alt=''
+            style={{ width: '6.6rem' }}
+          />
           <div
             className={c(FontClassNames.xxLarge, t.mv4)}
             style={{ fontWeight: FontWeights.semibold }}
@@ -135,7 +279,9 @@ const Feature = () => (
             className={c(FontClassNames.mediumPlus, t.lhCopy)}
             style={{ maxWidth: '20rem' }}
           >
-            平台针对培训业务用途进行功能适配和开发，包括Notebook服务、数据共享及管理等 ，共享资源市场：提供资源共享市场，实现模型、算法、数据、镜像等的共享 。
+            平台针对培训业务用途进行功能适配和开发，包括Notebook服务、数据共享及管理等
+            ，共享资源市场：提供资源共享市场，实现模型、算法、数据、镜像等的共享
+            。
           </div>
         </div>
       </div>
@@ -154,7 +300,11 @@ const Feature = () => (
         )}
       >
         <div className={c(t.flex, t.flexColumn, t.itemsCenter)}>
-          <Icon iconName="ATPLogo" title="ATPLogo" style={{ fontSize: '5rem' }}  />
+          <img
+            src='../../../assets/img/icon5.png'
+            alt=''
+            style={{ width: '6.6rem' }}
+          />
           <div
             className={c(FontClassNames.xxLarge, t.mv4)}
             style={{ fontWeight: FontWeights.semibold }}
@@ -165,7 +315,9 @@ const Feature = () => (
             className={c(FontClassNames.mediumPlus, t.lhCopy)}
             style={{ maxWidth: '20rem' }}
           >
-            支持多种数据存储方式和访问协议（HDFS、NFS、Azure Blob）。平台软件提供基于Azure AD的安全认证和授权机制。支持PB级可扩展数据存储资源的管理及调度。
+            支持多种数据存储方式和访问协议（HDFS、NFS、Azure
+            Blob）。平台软件提供基于Azure
+            AD的安全认证和授权机制。支持PB级可扩展数据存储资源的管理及调度。
           </div>
         </div>
       </div>
@@ -178,12 +330,16 @@ const Feature = () => (
           t.tc,
           t.flex,
           t.flexColumn,
-          t.itemsCenter,
+          t.itemsEnd,
           t.justifyBetween,
         )}
       >
         <div className={c(t.flex, t.flexColumn, t.itemsCenter)}>
-          <Icon iconName="SearchAndApps" title="SearchAndApps" style={{ fontSize: '5rem' }}  />
+          <img
+            src='../../../assets/img/icon6.png'
+            alt=''
+            style={{ width: '6.6rem' }}
+          />
           <div
             className={c(FontClassNames.xxLarge, t.mv4)}
             style={{ fontWeight: FontWeights.semibold }}
@@ -200,7 +356,6 @@ const Feature = () => (
       </div>
     </div>
   </div>
-
 );
 
 export default Feature;

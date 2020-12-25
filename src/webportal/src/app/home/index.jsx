@@ -19,10 +19,10 @@ import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import 'whatwg-fetch';
 
-import { FontClassNames } from '@uifabric/styling';
+import { FontClassNames, FontWeights } from '@uifabric/styling';
 import c from 'classnames';
 import { isEmpty } from 'lodash';
-import { initializeIcons } from 'office-ui-fabric-react';
+import { Icon, initializeIcons } from 'office-ui-fabric-react';
 import querystring from 'querystring';
 import React, { useState, useCallback, useEffect } from 'react';
 import ReactDOM from 'react-dom';
@@ -36,6 +36,7 @@ import { checkToken } from '../user/user-auth/user-auth.component';
 import config from '../config/webportal.config';
 import { SpinnerLoading } from '../components/loading';
 import t from 'tachyons-sass/tachyons.scss';
+import MediaQuery from 'react-responsive';
 
 let loginTarget = '/home.html';
 const query = new URLSearchParams(window.location.search);
@@ -127,19 +128,42 @@ const Index = () => {
     >
       {/* top */}
       <div
-        className={c(t.pv3, t.ph4, t.flex, t.justifyBetween)}
+        className={c(t.pv2)}
         style={{
           backgroundColor: '#2C70BA',
         }}
       >
-        <div className={c(FontClassNames.large, t.white, t.mv0)}>
-          <span className={c(t.ml3)}>人工智能资源调度管理平台</span>
-        </div>
         <div
-          className={c(FontClassNames.large, t.white, t.dim, t.pointer, t.mv0)}
-          onClick={showLoginModal}
+          className={c(t.flex, t.itemsCenter, t.justifyBetween, t.center)}
+          style={{ maxWidth: '75rem' }}
         >
-          登录
+          <div className={c(t.w60L)}>
+            <div className={c(t.flex)}>
+              <img
+                className={c(t.vMid)}
+                src='../../assets/img/comp-logo.png'
+                alt=''
+              />
+              <p className={c(t.vMid, t.ml3, t.white, FontClassNames.xLarge)}>
+                |
+              </p>
+              <p className={c(t.vMid, t.ml3, t.white, FontClassNames.xLarge)}>
+                人工智能资源调度管理平台
+              </p>
+            </div>
+          </div>
+          <div
+            className={c(
+              FontClassNames.large,
+              t.white,
+              t.dim,
+              t.pointer,
+              t.mv0,
+            )}
+            onClick={showLoginModal}
+          >
+            登录
+          </div>
         </div>
       </div>
       {/* content */}
@@ -149,7 +173,7 @@ const Index = () => {
         {/* features */}
         <Feature />
         {/* bottom */}
-        {/*<Bottom />*/}
+        {/* <Bottom /> */}
       </div>
       {/* login modal */}
       <LoginModal

@@ -28,7 +28,7 @@ import t from 'tachyons-sass/tachyons.scss';
 const BREAKPOINT = 960;
 
 const Jumbotron = ({ showLoginModal }) => (
-  <div className={c(ColorClassNames.neutralLightBackground, t.ph6)}>
+  <div className={c(ColorClassNames.neutralLightBackground)}>
     {/* small */}
     <MediaQuery maxWidth={BREAKPOINT}>
       <div className={c(t.flex, t.flexColumn, t.itemsCenter, t.pv4)}>
@@ -39,17 +39,14 @@ const Jumbotron = ({ showLoginModal }) => (
           </div>
           <div
             className={c(FontClassNames.mediumPlus, t.tc, t.lhCopy, t.mv4)}
-            style={{ maxWidth: '20rem' }}
+            style={{ maxWidth: '500px' }}
           >
             融合微软算力调度项目OpenPAI,突破新型GPU调度、混合云架构、容器和虚机混合编排蓝图部署，适用于人工智能应用的新型API安全网关等场景落地关键技术，
             开发了人工智能资源调度平台，
-            <br />
-            支持Tensorflow、PyTorch、MXNet、Keras等多种深度学习计算框架，适配智慧金融、智慧物流、智慧医疗等各种人工智能场景，
-            具备为数据处理标记、模型开发、模型训练优化和部署全程保驾护航的能力。
           </div>
           <PrimaryButton
             styles={{ root: { maxWidth: '6rem' } }}
-            text='登录'
+            text='立即登录'
             onClick={showLoginModal}
           />
         </div>
@@ -58,31 +55,28 @@ const Jumbotron = ({ showLoginModal }) => (
     {/* large */}
     <MediaQuery minWidth={BREAKPOINT + 1}>
       <div
-        className={c(t.flex, t.itemsCenter, t.justifyBetween, t.pv5, t.ph4, t.center)}
-        style={{ maxWidth: '95%' }}
+        className={c(t.flex, t.itemsCenter, t.justifyBetween, t.pv5, t.center)}
+        style={{ maxWidth: '75rem', fontFamily: 'Microsoft YaHei' }}
       >
         <div
           className={c(t.flex, t.flexColumn)}
-          style={{ minWidth: '20rem', maxWidth: '60%' }}
+          // style={{ minWidth: '20rem' }}
         >
-          <div className={c(FontClassNames.superLarge)}>
+          <div style={{ fontSize:'2.2rem', color: '#18588c', fontWeight: 'bold'}}>
             人工智能资源调度管理平台
           </div>
-          <div className={c(FontClassNames.mediumPlus, t.lhCopy, t.mv4)}>
-            融合微软算力调度项目OpenPAI,突破新型GPU调度、混合云架构、容器和虚机混合编排蓝图部署，适用于人工智能应用的新型API安全网关等场景落地关键技术，
-            开发了人工智能资源调度平台，
-            <br />
-            支持Tensorflow、PyTorch、MXNet、Keras等多种深度学习计算框架，适配智慧金融、智慧物流、智慧医疗等各种人工智能场景，
-            具备为数据处理标记、模型开发、模型训练优化和部署全程保驾护航的能力。
+          <div className={c(t.lhCopy, t.mv3)} style={{ fontSize:'1.1rem', color: '#333333', lineHeight: '1.1rem'}}>
+            <p>融合微软算力调度项目OpenPAI,突破新型GPU调度、混合云架构、</p>
+            <p>容器和虚机混合编排蓝图部署，适用于人工智能应用的新型API安全网</p>
+            <p>关等场景落地关键技术， 开发了人工智能资源调度平台，</p>
           </div>
           <PrimaryButton
-            styles={{ root: { maxWidth: '6rem' } }}
-            text='登录'
+            styles={{ root: { maxWidth: '10rem', height: '3rem', fontSize:'1.1rem' } }}
+            text='立即登录'
             onClick={showLoginModal}
           />
         </div>
-        <img src="../../../assets/img/bg.png" alt="" style={{ maxWidth: '28rem', minWidth: '25rem' }}/>
-        {/*<SignInBackground style={{ maxWidth: '28rem', minWidth: '25rem' }} />*/}
+        <img src="../../../assets/img/bg.png" alt="" style={{ maxWidth: '39rem', minWidth: '25rem' }}/>
       </div>
     </MediaQuery>
   </div>
